@@ -74,6 +74,8 @@ export interface PortfolioSection extends Section {
    */
   projects: Project[];
 
+  info: string;
+
   config: Section['config'] & {
     /**
      * [WEB] Configuration of the button that displays project's screenshots.
@@ -88,6 +90,8 @@ export interface PortfolioSection extends Section {
        * [WEB] Title displayed when hovering the button.
        */
       title?: string;
+
+      info?: string;
     };
   };
 }

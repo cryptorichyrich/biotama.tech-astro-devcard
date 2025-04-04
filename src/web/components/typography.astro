@@ -6,6 +6,7 @@ const variantToElement = {
   'main-subtitle': 'h2',
   'section-title': 'h2',
   'section-subtitle': 'h3',
+  'section-subtitle-info': 'h5',
   'item-title': 'h3',
   'item-subtitle-primary': 'p',
   'item-subtitle-secondary': 'p',
@@ -17,6 +18,7 @@ const variantToElement = {
   skill: 'span',
   tag: 'div',
   button: 'div',
+  info: 'span',
 } as const;
 
 export const variantToClassName: Record<TypographyVariant, string> /* tw */ = {
@@ -24,6 +26,7 @@ export const variantToClassName: Record<TypographyVariant, string> /* tw */ = {
   'main-subtitle': 'text-base sm:text-lg font-medium text-gray-700 dark:text-gray-100',
   'section-title': 'text-3xl font-extrabold text-gray-900 dark:text-gray-100',
   'section-subtitle': 'text-lg font-extrabold text-gray-900 dark:text-gray-100',
+  'section-subtitle-info': 'font-normal text-gray-700 dark:text-gray-100',
   'item-title': 'text-xl font-extrabold text-gray-900 dark:text-gray-100',
   'item-subtitle-primary': 'text-base font-semibold leading-snug text-gray-900 dark:text-gray-100',
   'item-subtitle-secondary': 'text-sm font-medium text-gray-700 dark:text-gray-100',
@@ -35,6 +38,7 @@ export const variantToClassName: Record<TypographyVariant, string> /* tw */ = {
   skill: 'text-sm font-medium text-gray-700 dark:text-gray-300',
   tag: 'text-sm font-medium tracking-wide text-gray-700 dark:text-gray-100',
   button: 'text-base font-medium text-white',
+  info: '',
 };
 
 interface LinkProps {

@@ -1,6 +1,6 @@
 import type { MainSection } from '@/types/sections/main-section.types';
 import type { ReadonlyDeep } from 'type-fest';
-import { facebook, github, linkedin, twitter } from '../helpers/links';
+import { facebook, githubLink, linkedin, twitter } from '../helpers/links';
 
 const mainSectionData = {
   config: {
@@ -10,30 +10,38 @@ const mainSectionData = {
     visible: true,
   },
   image: import('@/assets/my-image.jpeg'),
-  fullName: 'Mark Freeman',
-  role: 'Senior React Developer',
+  fullName: 'Agustinus Biotamalo Lumbantoruan',
+  role: 'Web Developer',
   details: [
-    { label: 'Phone', value: '605 475 6961', url: 'tel:605 475 6961' },
-    { label: 'Email', value: 'mark.freeman.dev@gmail.com', url: 'mailto:mark.freeman.dev@gmail.com' },
-    { label: 'From', value: 'Warsaw, Poland' },
-    { label: 'Salary range', value: '18 000 - 25 000 PLN' },
+    { label: 'Phone', value: '62 813 9825 3186', url: 'tel:62 813 9825 3186' },
+    { label: 'Email', value: 'fxwisdom1@gmail.com', url: 'mailto:fxwisdom1@gmail.com' },
+    { label: 'From', value: 'Jakarta, Indonesia' },
+    // { label: 'Salary range', value: '18 000 - 25 000 PLN' },
   ],
   pdfDetails: [
-    { label: 'Phone', value: '605 475 6961' },
-    { label: 'Email', value: 'mark.freeman.dev@gmail.com' },
-    { label: 'LinkedIn', value: '/in/mark-freeman', url: 'https://linkedin.com' },
-    { label: 'GitHub', value: '/mark-freeman', url: 'https://github.com' },
-    { label: 'Website', value: 'mark-freeman-personal-website.com', url: '/', fullRow: true },
+    { label: 'Phone', value: '62 813 9825 3186' },
+    { label: 'Email', value: 'fxwisdom1@gmail.com' },
+    {
+      label: 'LinkedIn',
+      value: '/in/agustinus-biotamalo-lumbantoruan-99126149',
+      url: 'https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/',
+    },
+    { label: 'GitHub', value: '/cryptorichyrich', url: 'https://github.com/cryptorichyrich' },
+    { label: 'Website', value: 'https://biotama.tech', url: '/', fullRow: true },
   ],
-  description:
-    'Lorem ipsum dolor sit amet, consectetur **adipiscing elit**. In sodales ac dui at *vestibulum*. In condimentum metus id dui tincidunt, in blandit mi [vehicula](/). Nulla lacinia, erat sit amet elementum vulputate, lectus mauris volutpat mi, vitae accumsan metus elit ut nunc. Vestibulum lacinia enim eget eros fermentum scelerisque. Proin augue leo, posuere ut imperdiet vitae, fermentum eu ipsum. Sed sed neque sagittis, posuere urna nec, commodo leo. Pellentesque posuere justo vitae massa volutpat maximus.',
-  tags: [{ name: 'Open for freelance' }, { name: 'Available for mentoring' }, { name: 'Working on side project' }],
+  description: `As a passionate full-stack developer specializing in financial technology, I transform complex financial processes into intuitive digital experiences across retail banking, commercial banking, and forex trading platforms. While my expertise spans the entire development stack, my focus over the past five years has centered on mastering modern JavaScript frameworks including React, Nest.Js, Astro.Js, Vue.js, and Next.js to create dynamic, responsive interfaces. I combine technical excellence with business acumen to deliver secure, high-performance solutions that satisfy both C-level stakeholders and end-users while maintaining strict regulatory compliance.`,
+  tags: [{ name: 'Open for work' }, { name: 'Open for freelance' }, { name: 'Working on side project' }],
   action: {
     label: 'Download CV',
     url: '/cv.pdf',
-    downloadedFileName: 'CV-Mark_Freeman.pdf',
+    downloadedFileName: 'CV-Agustinus_Biotamalo_Lumbantpruan.pdf',
   },
-  links: [facebook({ url: '#' }), github({ url: '#' }), linkedin({ url: '#' }), twitter({ url: '#' })],
+  links: [
+    linkedin({ url: 'https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/' }),
+    githubLink({ url: 'https://github.com/cryptorichyrich' }),
+    facebook({ url: 'https://www.facebook.com/Agustinus.Biotamalo.Lumbantoruan/' }),
+    twitter({ url: 'https://x.com/fxwisdom1' }),
+  ],
 } as const satisfies ReadonlyDeep<MainSection>;
 
 export default mainSectionData;

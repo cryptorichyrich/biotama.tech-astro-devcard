@@ -42,7 +42,7 @@ export const pinterest = createLinkFactory({
 
 // CODE
 
-export const github = createLinkFactory({
+export const githubLink = createLinkFactory({
   name: 'GitHub',
   icon: 'fa6-brands:github',
 });

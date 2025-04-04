@@ -1,18 +1,37 @@
 import type { ExperienceSection } from '@/types/sections/experience-section.types';
 import type { ReadonlyDeep } from 'type-fest';
-import { facebook, github, instagram, linkedin, twitter, website } from '../helpers/links';
+import { facebook, githubLink, instagram, linkedin, website } from '../helpers/links';
 import {
-  chakraUi,
-  eslint,
-  firebase,
-  nextJs,
-  nx,
-  pnpm,
+  bootstrap,
+  css3,
+  docker,
+  dockerCompose,
+  elementor,
+  flask,
+  git,
+  github,
+  githubActions,
+  hibernate,
+  html5,
+  hubspotCms,
+  hubspotMarketing,
+  java,
+  jekyll,
+  jquery,
+  laravel,
+  mql4,
+  mql5,
+  n8n,
+  php,
+  pinescript,
+  python,
   react,
-  reactQuery,
-  tailwindCss,
-  typescript,
+  spring,
+  springBoot,
+  ubuntu,
   vue,
+  windowsServer,
+  wordpress,
 } from '../helpers/skills';
 
 const experienceSectionData = {
@@ -24,59 +43,70 @@ const experienceSectionData = {
   },
   jobs: [
     {
-      role: 'Senior front-end developer',
-      company: 'Google',
-      image: import('@/assets/logos/google-logo.jpg'),
-      dates: [new Date('2020-02'), null],
+      role: 'Senior Web Developer',
+      company: 'CITT Services',
+      image: import('@/assets/logos/citt-logo.png'),
+      dates: [new Date('2014-01'), new Date('2024-10')],
       description: `
-        - In tristique vulputate augue vel egestas.
-        - Quisque ac imperdiet tortor, at lacinia ex.
-        - Duis vel ex hendrerit, commodo odio sed, aliquam enim.
-        - Ut arcu nulla, tincidunt eget arcu eget, molestie vulputate nisi.
-        - Nunc malesuada leo et est iaculis facilisis.
-        - Fusce eu urna ut magna malesuada fringilla.
+At CITT Services, I contributed to comprehensive technology consulting services that enabled client firms to expand their technical capabilities without the burden of hiring specialized staff. Working with financial sector clients including Pepperstone, TitanFX, BaxiaMarkets, Funded Prop BX, Traderscolo, and Liquidity Connect, I delivered expertise in web development, SEO optimization, backend infrastructure, and automated data synchronization systems.
+<span></span>
+My technical accomplishments included developing responsive and user-friendly web applications, implementing SEO strategies to improve online visibility, architecting robust backend systems, and creating automated data workflows that enhanced operational efficiency. These projects required close collaboration with stakeholders to understand their technical requirements and business objectives, resulting in scalable solutions that modernized their digital infrastructure while maintaining security and performance standards.
       `,
       tagsList: {
         title: 'Technologies',
-        tags: [react(), nextJs(), typescript(), nx(), firebase()],
+        tags: [
+          ubuntu(),
+          windowsServer(),
+          react(),
+          html5(),
+          css3(),
+          bootstrap(),
+          php(),
+          wordpress(),
+          elementor(),
+          laravel(),
+          vue(),
+          jquery(),
+          hubspotCms(),
+          hubspotMarketing(),
+          jekyll(),
+          docker(),
+          dockerCompose(),
+          n8n(),
+          git(),
+          github(),
+          githubActions(),
+          mql4(),
+          mql5(),
+          pinescript(),
+          python(),
+          flask(),
+        ],
       },
-      links: [facebook({ url: '#' }), linkedin({ url: '#' })],
+      links: [
+        website({ url: 'https://cittservices.com/' }),
+        facebook({ url: '' }),
+        linkedin({ url: 'https://www.linkedin.com/company/cittservices?originalSubdomain=id' }),
+      ],
     },
     {
-      role: 'React.js developer',
-      company: 'Facebook',
-      image: import('@/assets/logos/facebook-logo.png'),
-      dates: [new Date('2019-04'), new Date('2020-02')],
+      role: 'Host Integrator',
+      company: 'Wirecard',
+      image: import('@/assets/logos/wirecard.png'),
+      dates: [new Date('2011-08'), new Date('2013-12')],
       description: `
-        - Aenean eget ultricies felis. Pellentesque dictum massa ut tellus eleifend, sed posuere massa mattis.
-        - Ut posuere massa lacus, eleifend molestie tortor auctor vel.
-        - Sed sed sollicitudin eros, id ultricies mi. Aliquam sodales elit vel ante tempor, non vehicula nibh facilisis.
-        - Cras feugiat ultricies maximus. Aliquam tristique ex odio, ac semper urna accumsan a.
+At PT. Aprisma Indonesia (a Wirecard A.G. subsidiary), I served as a host integrator specializing in payment gateway implementations. I engineered robust payment processing solutions by integrating Aprisma's proprietary Prisma Gateway technology with clients' banking systems. My technical contributions included developing custom API connections, implementing secure transaction protocols, and configuring end-to-end payment flows across multiple channels.
+<span></span>
+Daily responsibilities encompassed writing integration code, troubleshooting complex payment scenarios, optimizing transaction processing efficiency, and ensuring PCI-DSS compliance. I designed automated testing frameworks to validate payment workflows and created technical documentation for system administrators. This role demanded advanced knowledge of web services, encryption methods, financial transaction protocols, and cross-platform integration techniques while working within an enterprise environment serving Wirecard's global network of 14,000+ corporate clients across 69 countries.
       `,
       tagsList: {
         title: 'Technologies',
-        tags: [react(), reactQuery(), chakraUi(), eslint()],
+        tags: [java(), html5(), css3(), spring(), springBoot(), hibernate()],
       },
-      links: [website({ url: '#' }), instagram({ url: '#' })],
-    },
-    {
-      role: 'Junior front-end developer',
-      company: 'GitLab',
-      image: import('@/assets/logos/gitlab-logo.png'),
-      dates: [new Date('2016-09'), new Date('2019-04')],
-      description: `
-        Nulla volutpat justo ante, rhoncus posuere massa egestas in:
-
-        - Quisque pellentesque, dolor nec sollicitudin iaculis, sem velit consequat ligula, eget tempus ligula leo et est.
-        - Maecenas ut elit sit amet nibh maximus condimentum in nec lorem. Pellentesque tincidunt odio vel leo suscipit, in interdum mi gravida.
-
-        Donec non vulputate augue 🤓
-      `,
-      tagsList: {
-        title: 'Technologies',
-        tags: [vue(), tailwindCss(), pnpm()],
-      },
-      links: [twitter({ url: '#' }), github({ url: '#' })],
+      links: [
+        website({ url: 'https://www.widetechnologies.co.id/' }),
+        instagram({ url: 'https://www.instagram.com/explore/locations/278349940/pt-aprisma-indonesia/' }),
+      ],
     },
   ],
 } as const satisfies ReadonlyDeep<ExperienceSection>;

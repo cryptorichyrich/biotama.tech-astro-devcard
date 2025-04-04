@@ -8,6 +8,7 @@ import type { MainSection } from './sections/main-section.types';
 import type { PortfolioSection } from './sections/portfolio-section.types';
 import type { SkillsSection } from './sections/skills-section.types';
 import type { TestimonialsSection } from './sections/testimonials-section.types';
+import type { CertificationSection } from './sections/certification-section.types';
 
 export type Config = {
   /**
@@ -46,6 +47,11 @@ export type Sections = {
    * Your projects and initiatives.
    */
   portfolio: PortfolioSection;
+
+  /**
+   * Your education degrees and certifications.
+   */
+  certification: CertificationSection;
 
   /**
    * Your education degrees and certifications.

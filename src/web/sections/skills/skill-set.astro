@@ -6,7 +6,7 @@ import LevelledSkill from './levelled-skill.astro';
 
 export interface Props extends SkillSet {}
 
-const { skills, title } = Astro.props;
+const { skills, title, info } = Astro.props;
 
 const isLevelledSkillSection = (skills: Props['skills']): skills is LevelledSkillType[] => {
   const firstSkill = skills[0];
@@ -18,6 +18,7 @@ const isLevelledSkillSection = (skills: Props['skills']): skills is LevelledSkil
 
 <div class="flex flex-col gap-3">
   <Typography variant="section-subtitle">{title}</Typography>
+  <Typography variant="section-subtitle-info" class="text-grey-500">{info}</Typography>
   {
     isLevelledSkillSection(skills) ? (
       <div class="flex flex-wrap gap-8">

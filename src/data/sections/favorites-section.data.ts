@@ -35,25 +35,49 @@ const favoritesSectionData = {
         author: 'Robert C. Martin',
         url: 'https://www.goodreads.com/book/show/10284614-the-clean-coder',
       },
+      {
+        image: import('@/assets/head-first-java.jpg'),
+        title: 'Head First Java',
+        author: 'Kathy Sierra, Bert Bates',
+        url: 'https://www.goodreads.com/book/show/231262.Head_First_Java',
+      },
+      {
+        image: import('@/assets/head-first-javascript.jpg'),
+        title: 'Head First Java',
+        author: "O'Reilly Media",
+        url: 'https://www.goodreads.com/book/show/6307394-head-first-javascript-code-magnets',
+      },
+      {
+        image: import('@/assets/head-first-python.jpg'),
+        title: 'Head First Python',
+        author: 'Paul Barry',
+        url: 'https://www.goodreads.com/book/show/8933914-head-first-python',
+      },
+      {
+        image: import('@/assets/head-first-jsp.jpg'),
+        title: 'Head First Servlets & JSP',
+        author: 'Bryan Basham , Kathy Sierra , Bert Bates',
+        url: 'https://www.goodreads.com/book/show/9052992-head-first-servlets-and-jsp',
+      },
     ],
   },
   people: {
     title: 'People I learn from',
     data: [
       {
-        image: import('@/assets/favorites/people/person-1.jpg'),
-        name: 'Kent C. Dodds',
-        url: 'https://kentcdodds.com/',
+        image: import('@/assets/Maximilian Schwarzmüller.webp'),
+        name: 'Maximilian Schwarzmüller',
+        url: 'https://academind.com//',
       },
       {
-        image: import('@/assets/favorites/people/person-2.jpeg'),
-        name: 'Kent Beck',
-        url: 'https://www.kentbeck.com/',
+        image: import('@/assets/james spurin.jpg'),
+        name: 'James Spurin',
+        url: 'https://diveinto.com/p/home',
       },
       {
-        image: import('@/assets/favorites/people/person-3.jpeg'),
+        image: import('@/assets/tom philips.webp'),
         name: 'Eric Evans',
-        url: 'https://www.domainlanguage.com/',
+        url: 'https://webdeveducation.com/',
       },
       {
         image: import('@/assets/favorites/people/person-4.jpeg'),
@@ -95,6 +119,18 @@ const favoritesSectionData = {
   medias: {
     title: 'Media I follow',
     data: [
+      {
+        image: import('@/assets/freeCodeCamp.org.jpg'),
+        title: 'freeCodeCamp.org',
+        type: 'YouTube channel',
+        url: 'https://www.youtube.com/@freecodecamp',
+      },
+      {
+        image: import('@/assets/maximilian-schwarzmueller.jpg'),
+        title: 'maximilian-schwarzmueller',
+        type: 'YouTube channel',
+        url: 'https://www.youtube.com/@maximilian-schwarzmueller',
+      },
       {
         image: import('@/assets/favorites/media/media-1.jpeg'),
         title: 'Fireship.io',
