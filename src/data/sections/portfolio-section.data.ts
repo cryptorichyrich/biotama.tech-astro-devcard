@@ -34,6 +34,10 @@ import {
   mql5,
   csharp,
   windowsServer,
+  docker,
+  dockerCompose,
+  ubuntu,
+  kubernetes,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -142,7 +146,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       description: `I immersed myself in the GatsbyJS framework through an Udemy course by Eric Evans, marking my first hands-on experience with this powerful technology. Working independently as both front-end and back-end developer, I built a headless CMS solution that leverages WordPress for content management while GatsbyJS extracts and transforms this data into a lightning-fast static site. This architecture allowed me to combine the user-friendly content editing capabilities of WordPress with the performance benefits of a static site generator. Throughout the two-month development process, I gained valuable insights into modern JAMstack principles, GraphQL data querying, and the benefits of decoupled architecture. The project served as an excellent learning opportunity to understand how static site generation can dramatically improve page load times and overall performance while maintaining full content management flexibility.`,
       tagsList: {
         title: 'Technologies',
-        tags: [gatsbyjs(), tailwindCss(), react(), wordpress(), graphql(), mysql()],
+        tags: [gatsbyjs(), tailwindCss(), react(), wordpress(), graphql(), mysql(), dockerCompose()],
       },
       links: [website({ url: 'https://www.udemy.com/course/gatsby-js-react-wordpress-graphql/' })],
     },
@@ -167,7 +171,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       description: `For my "NextJS Property" project, I applied the knowledge gained from my previous Gatsby experience but shifted to the NextJS framework to explore its unique capabilities. Working solo as both front-end and back-end developer, I created a complete property listing application that showcases real estate information with rich detail and intuitive navigation. Unlike my Gatsby project, NextJS allowed me to implement hybrid rendering strategies, using static generation for content-heavy pages while leveraging server-side rendering for dynamic search functionality. This approach provided the performance benefits of static sites with the flexibility needed for interactive features. The development process enhanced my understanding of React's ecosystem while revealing the practical differences between these two powerful frameworks. This personal project strengthened my full-stack capabilities and demonstrated how NextJS can be especially valuable for applications requiring both speed and dynamic content handling.RetryClaude can make mistakes. `,
       tagsList: {
         title: 'Technologies',
-        tags: [nextJs(), tailwindCss(), react(), wordpress(), graphql(), mysql()],
+        tags: [nextJs(), tailwindCss(), react(), wordpress(), graphql(), mysql(), dockerCompose()],
       },
       links: [website({ url: 'https://www.udemy.com/course/next-js-wordpress/?couponCode=25BBPMXACCAGE2' })],
     },
@@ -192,7 +196,20 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
         The development process involved tackling complex technical challenges, including creating uniform interfaces for disparate trading platforms, implementing secure authentication protocols for accessing trading accounts, and designing a resilient real-time synchronization system with minimal latency. I built a user-friendly dashboard that provides detailed monitoring of trade copying status, performance metrics, and comprehensive logging. While the project remained in the personal development phase, it significantly enhanced my understanding of financial technology integration, multi-platform compatibility issues, and the architectural considerations needed for high-reliability financial applications that must operate with precision in time-sensitive environments.`,
       tagsList: {
         title: 'Technologies',
-        tags: [nodejs(), javascript(), css3(), tailwindCss(), mysql(), zmq(), websocket(), mql4(), mql5(), csharp()],
+        tags: [
+          nodejs(),
+          javascript(),
+          css3(),
+          tailwindCss(),
+          mysql(),
+          zmq(),
+          websocket(),
+          mql4(),
+          mql5(),
+          csharp(),
+          docker(),
+          kubernetes(),
+        ],
       },
       links: [website({ url: '#' })],
     },
@@ -217,7 +234,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
 On the front-end, I designed an intuitive interface that balances aesthetic appeal with practical functionality, implementing responsive layouts using HTML5 and CSS3 that adapt seamlessly across devices. The back-end architecture leverages WordPress and PHP for content management and business logic, with custom MySQL database solutions handling complex trader performance metrics and account data. Throughout the nearly three-year development cycle, I maintained version control through GitHub, facilitating efficient collaboration and deployment processes. The resulting platform provides a robust infrastructure for trader evaluation, account management, and performance tracking, delivering a professional solution that operates at the intersection of financial technology and web development.`,
       tagsList: {
         title: 'Technologies',
-        tags: [wordpress(), php(), html5(), css3(), github(), mysql()],
+        tags: [wordpress(), php(), html5(), css3(), github(), mysql(), docker(), dockerCompose(), ubuntu()],
       },
       links: [website({ url: '#' })],
     },
@@ -242,7 +259,21 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         The secure client area was developed using Laravel, providing a robust foundation for critical financial operations including account management and deposit functionality. I architected a comprehensive microservices infrastructure to integrate multiple payment service providers, ensuring seamless transaction processing while maintaining system modularity. For regulatory compliance, I implemented SumSub KYC technology, creating a frictionless yet thorough identity verification workflow. The front-end implementation for both the public site and client portal utilized React and Vue.js frameworks with HTML5 and CSS3, delivering responsive interfaces optimized for different user journeys. Throughout this complex project, I maintained strict version control via GitHub and built a scalable MySQL database architecture to support growing user volumes and transaction data. This carefully separated yet cohesive system architecture successfully balanced marketing objectives with stringent financial security requirements while providing an intuitive user experience.`,
       tagsList: {
         title: 'Technologies',
-        tags: [wordpress(), php(), laravel(), react(), vue(), html5(), css3(), github(), mysql(), hubspotCms()],
+        tags: [
+          wordpress(),
+          php(),
+          laravel(),
+          react(),
+          vue(),
+          html5(),
+          css3(),
+          github(),
+          mysql(),
+          hubspotCms(),
+          docker(),
+          dockerCompose(),
+          ubuntu(),
+        ],
       },
       links: [website({ url: '#' })],
     },

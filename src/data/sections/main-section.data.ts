@@ -13,13 +13,13 @@ const mainSectionData = {
   fullName: 'Agustinus Biotamalo Lumbantoruan',
   role: 'Web Developer',
   details: [
-    { label: 'Phone', value: '62 813 9825 3186', url: 'tel:62 813 9825 3186' },
+    { label: 'Phone', value: '+62 813 9825 3186', url: 'tel:+62 813 9825 3186' },
     { label: 'Email', value: 'fxwisdom1@gmail.com', url: 'mailto:fxwisdom1@gmail.com' },
     { label: 'From', value: 'Jakarta, Indonesia' },
     // { label: 'Salary range', value: '18 000 - 25 000 PLN' },
   ],
   pdfDetails: [
-    { label: 'Phone', value: '62 813 9825 3186' },
+    { label: 'Phone', value: '+62 813 9825 3186' },
     { label: 'Email', value: 'fxwisdom1@gmail.com' },
     {
       label: 'LinkedIn',
