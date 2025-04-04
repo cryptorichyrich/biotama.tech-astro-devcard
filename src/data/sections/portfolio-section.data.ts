@@ -206,7 +206,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
         { label: 'Company', value: 'Funded Prop Bx' },
         { label: 'Category', value: ['Web app'] },
       ],
-      pdfDetails: [{ label: 'Demo', value: 'https://golden-bulls-d73jd7.netlify.app', url: '#' }],
+      pdfDetails: [{ label: 'Live', value: 'https://fundedpropbx.com/', url: '#' }],
       // screenshots: [
       //   { src: import('@/assets/portfolio/project-1-screenshot-1.jpg'), alt: 'First screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
