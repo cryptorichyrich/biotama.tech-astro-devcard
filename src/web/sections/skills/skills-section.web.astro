@@ -14,7 +14,7 @@ const { config, skillSets } = Astro.props;
       skillSets.map((skillSet) => (
         <>
           <SkillSet {...skillSet} />
-          <hr />
+          <hr class="h-px w-full bg-gray-200 last:hidden dark:bg-gray-600" />
         </>
       ))
     }
