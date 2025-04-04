@@ -1,0 +1,73 @@
+---
+// TailwindFontSizeButton.astro - Uses Tailwind classes for font scaling
+---
+
+<button
+  id="font-size-button"
+  class="bg-blue-500 hover:bg-blue-600 flex h-10 w-10 items-center justify-center rounded-full text-white shadow-sm transition-colors duration-200"
+  aria-label="Adjust font size"
+  title="Click to adjust font size (resets after 5 clicks)"
+>
+  <span class="font-semibold">Aa</span>
+</button>
+
+<script>
+  // Get the button element
+  const button = document.getElementById('font-size-button');
+
+  // Tailwind size classes to apply to body
+  const sizeLevels = [
+    '', // Level 0: Normal (no class)
+    'text-105', // Level 1: 1.05x
+    'text-110', // Level 2: 1.1x
+    'text-115', // Level 3: 1.15x
+    'text-120', // Level 4: 1.2x
+  ];
+
+  // Add the Tailwind classes to the config if they don't exist yet
+  const addTailwindClasses = () => {
+    let styleTag = document.getElementById('font-size-adjuster-tailwind');
+
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'font-size-adjuster-tailwind';
+
+      // Define custom text size classes
+      styleTag.textContent = `
+        .text-105 * { font-size: 105% !important; }
+        .text-106 * { font-size: 108% !important; }
+        .text-107 * { font-size: 111% !important; }
+        .text-108 * { font-size: 114% !important; }
+      `;
+
+      document.head.appendChild(styleTag);
+    }
+  };
+
+  // Initialize when page loads
+  addTailwindClasses();
+
+  // Initialize click counter
+  let clickCount = 0;
+
+  // Add click event listener
+  button?.addEventListener('click', () => {
+    // Increment click count and reset after 5 clicks
+    clickCount = (clickCount + 1) % 5;
+
+    // Get the body element
+    const body = document.body;
+
+    // Remove any existing size classes
+    sizeLevels.forEach((cls) => {
+      if (cls) body.classList.remove(cls);
+    });
+
+    // Add the new size class
+    if (sizeLevels[clickCount]) {
+      body.classList.add(sizeLevels[clickCount]);
+    }
+
+    console.log(`Font size set to level ${clickCount}`);
+  });
+</script>

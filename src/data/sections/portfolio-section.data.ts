@@ -176,7 +176,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       links: [website({ url: 'https://www.udemy.com/course/next-js-wordpress/?couponCode=25BBPMXACCAGE2' })],
     },
     {
-      name: 'CrossSyncOrder',
+      name: 'CrosSyncOrder',
       //image: import('@/assets/portfolio/project-1.jpeg'),
       dates: [new Date('2024-07'), new Date('2024-10')],
       details: [
@@ -191,7 +191,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For my personal project "CrossSyncOrder," I designed and built a comprehensive Software as a Service (SaaS) solution targeting the Forex trading market's need for cross-platform trade synchronization. Working independently as both front-end and back-end developer, I created a system capable of copying trades from a single source trading account to multiple destination accounts across different platforms—MetaTrader 4, MetaTrader 5, and cTrader.
+      description: `For my personal project "CrosSyncOrder," I designed and built a comprehensive Software as a Service (SaaS) solution targeting the Forex trading market's need for cross-platform trade synchronization. Working independently as both front-end and back-end developer, I created a system capable of copying trades from a single source trading account to multiple destination accounts across different platforms—MetaTrader 4, MetaTrader 5, and cTrader.
 <span></span>
         The development process involved tackling complex technical challenges, including creating uniform interfaces for disparate trading platforms, implementing secure authentication protocols for accessing trading accounts, and designing a resilient real-time synchronization system with minimal latency. I built a user-friendly dashboard that provides detailed monitoring of trade copying status, performance metrics, and comprehensive logging. While the project remained in the personal development phase, it significantly enhanced my understanding of financial technology integration, multi-platform compatibility issues, and the architectural considerations needed for high-reliability financial applications that must operate with precision in time-sensitive environments.`,
       tagsList: {
@@ -211,7 +211,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
           kubernetes(),
         ],
       },
-      links: [website({ url: '#' })],
+      links: [website({ url: 'https://crossyncorder.com' })],
     },
     {
       name: 'Funded Prop Bx',
@@ -236,7 +236,7 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         title: 'Technologies',
         tags: [wordpress(), php(), html5(), css3(), github(), mysql(), docker(), dockerCompose(), ubuntu()],
       },
-      links: [website({ url: '#' })],
+      links: [website({ url: 'https://fundedpropbx.com' })],
     },
     {
       name: 'BaxiaMarkets',
@@ -275,7 +275,7 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
           ubuntu(),
         ],
       },
-      links: [website({ url: '#' })],
+      links: [website({ url: 'https://baxiamarkets.com' })],
     },
     {
       name: 'News BaxiaMarkets',
@@ -300,7 +300,7 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         title: 'Technologies',
         tags: [hubspotCms(), hubspotDevelopment()],
       },
-      links: [website({ url: '#' })],
+      links: [website({ url: 'https://news.baxiamarkets.com' })],
     },
     {
       name: 'Traderscolo Front-end and Back-end Development',
@@ -320,7 +320,7 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         title: 'Technologies',
         tags: [wordpress(), whmcs(), php(), vmware(), windowsServer()],
       },
-      links: [website({ url: '#' }), githubLink({ url: '#' })],
+      links: [website({ url: 'https://traderscolo.com' })],
     },
   ],
 } as const satisfies ReadonlyDeep<PortfolioSection>;
