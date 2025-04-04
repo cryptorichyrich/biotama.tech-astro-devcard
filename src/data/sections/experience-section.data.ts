@@ -44,7 +44,7 @@ const experienceSectionData = {
   jobs: [
     {
       role: 'Senior Web Developer',
-      company: 'CITT Services',
+      company: 'CITT Services (Remote, Dallas, USA)',
       image: import('@/assets/logos/citt-logo.png'),
       dates: [new Date('2014-01'), new Date('2024-10')],
       description: `
@@ -91,7 +91,7 @@ My technical accomplishments included developing responsive and user-friendly we
     },
     {
       role: 'Host Integrator',
-      company: 'Wirecard',
+      company: 'Wirecard (Jakarta, Indonesia)',
       image: import('@/assets/logos/wirecard.png'),
       dates: [new Date('2011-08'), new Date('2013-12')],
       description: `
