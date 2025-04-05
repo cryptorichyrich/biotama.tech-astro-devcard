@@ -72,6 +72,9 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
+      # Add this step in the build job, right before the "Upload artifact" step
+      - name: Create CNAME file
+        run: echo "biotama.tech" > ${{ env.BUILD_PATH }}/dist/CNAME        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
