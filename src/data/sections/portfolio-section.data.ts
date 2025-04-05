@@ -42,6 +42,7 @@ import {
   googleCloud,
   railway,
   bootstrap,
+  expressjs,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -202,6 +203,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
         title: 'Technologies',
         tags: [
           nodejs(),
+          expressjs(),
           javascript(),
           css3(),
           tailwindCss(),
