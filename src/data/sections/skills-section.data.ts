@@ -85,7 +85,7 @@ const skillsSectionData = {
     {
       title: 'Backend Development',
       info: '',
-      skills: [nodejs(), expressjs(), nestJs(), php(), graphql()],
+      skills: [nodejs(), expressjs(), nestJs(), php(), graphql(), java(), python()],
     },
     {
       title: 'Full-Stack Development',
