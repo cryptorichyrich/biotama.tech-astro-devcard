@@ -38,6 +38,9 @@ import {
   dockerCompose,
   ubuntu,
   kubernetes,
+  digitalOcean,
+  googleCloud,
+  railway,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -209,6 +212,7 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
           csharp(),
           docker(),
           kubernetes(),
+          railway(),
         ],
       },
       links: [website({ url: 'https://crossyncorder.com' })],
@@ -234,7 +238,18 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
 On the front-end, I designed an intuitive interface that balances aesthetic appeal with practical functionality, implementing responsive layouts using HTML5 and CSS3 that adapt seamlessly across devices. The back-end architecture leverages WordPress and PHP for content management and business logic, with custom MySQL database solutions handling complex trader performance metrics and account data. Throughout the nearly three-year development cycle, I maintained version control through GitHub, facilitating efficient collaboration and deployment processes. The resulting platform provides a robust infrastructure for trader evaluation, account management, and performance tracking, delivering a professional solution that operates at the intersection of financial technology and web development.`,
       tagsList: {
         title: 'Technologies',
-        tags: [wordpress(), php(), html5(), css3(), github(), mysql(), docker(), dockerCompose(), ubuntu()],
+        tags: [
+          wordpress(),
+          php(),
+          html5(),
+          css3(),
+          github(),
+          mysql(),
+          docker(),
+          dockerCompose(),
+          ubuntu(),
+          digitalOcean(),
+        ],
       },
       links: [website({ url: 'https://fundedpropbx.com' })],
     },
@@ -273,6 +288,8 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
           docker(),
           dockerCompose(),
           ubuntu(),
+          windowsServer(),
+          digitalOcean(),
         ],
       },
       links: [website({ url: 'https://baxiamarkets.com' })],
@@ -318,7 +335,7 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         The technical implementation leveraged WordPress for the customer-facing website and product information, while WHMCS provided the critical client management, billing, and service provisioning functionality. I created custom PHP solutions to enhance the integration between these platforms, developing specialized interfaces for VPS configuration options tailored to different trading software requirements. The underlying infrastructure was built on VMware virtualization technology, which enabled the reliable hosting and management of numerous client VPS instances. My work focused on creating intuitive dashboards for server management, usage monitoring, and service upgrades, making complex technical processes accessible to traders without IT backgrounds. This specialized hosting service allowed traders to run their automated trading systems continuously with minimal latency, providing them with a competitive edge in the markets.`,
       tagsList: {
         title: 'Technologies',
-        tags: [wordpress(), whmcs(), php(), vmware(), windowsServer()],
+        tags: [wordpress(), whmcs(), php(), vmware(), windowsServer(), ubuntu(), digitalOcean(), googleCloud()],
       },
       links: [website({ url: 'https://traderscolo.com' })],
     },

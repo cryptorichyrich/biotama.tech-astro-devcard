@@ -39,6 +39,13 @@ import {
   hubspotCms,
   flask,
   python,
+  sequelize,
+  prisma,
+  eloquent,
+  railway,
+  digitalOcean,
+  googleCloud,
+  sass,
 } from '../helpers/skills';
 
 const skillsSectionData = {
@@ -78,6 +85,7 @@ const skillsSectionData = {
         jquery(),
         tailwindCss(),
         css3(),
+        sass(),
         bootstrap(),
         html5(),
       ],
@@ -100,12 +108,17 @@ const skillsSectionData = {
     {
       title: 'Databases',
       info: '',
-      skills: [mysql(), oracle(), mongoDb(), postgreSql()],
+      skills: [mysql(), oracle(), mongoDb(), postgreSql(), sequelize(), prisma(), eloquent(), hibernate()],
     },
     {
       title: 'CMS',
       info: '',
       skills: [wordpress(), hubspotCms(), elementor()],
+    },
+    {
+      title: 'Cloud & DevOps',
+      info: '',
+      skills: [railway(), digitalOcean(), googleCloud()],
     },
     {
       title: 'I speak',

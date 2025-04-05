@@ -16,6 +16,64 @@ skill({ name: '...' }) — returns skill object with a custom name.
 skill({ description: '...' }) — returns skill with a description displayed when user hovers over it.
 */
 
+export const digitalOcean = createSkillFactory({
+  name: 'Digital Ocean',
+  icon: 'simple-icons:digitalocean',
+  iconColor: '#0080FF',
+  url: 'https://www.digitalocean.com/',
+  description:
+    'Cloud infrastructure provider offering virtual machines, managed databases, and app deployment solutions',
+  category: 'Cloud Services',
+});
+
+export const googleCloud = createSkillFactory({
+  name: 'Google Cloud',
+  icon: 'simple-icons:googlecloud',
+  iconColor: '#4285F4',
+  url: 'https://cloud.google.com/',
+  description:
+    'Suite of cloud computing services including compute, storage, ML, and data analytics running on Google infrastructure',
+  category: 'Cloud Services',
+});
+
+export const railway = createSkillFactory({
+  name: 'Railway',
+  icon: 'simple-icons:railway',
+  iconColor: '#0B0D0E',
+  url: 'https://railway.app/',
+  description:
+    'Modern deployment platform that automates infrastructure, environments, and deployments for developer teams',
+  category: 'Cloud Services',
+});
+
+export const eloquent = createSkillFactory({
+  name: 'Eloquent ORM',
+  icon: 'simple-icons:laravel',
+  iconColor: '#FF2D20',
+  url: 'https://laravel.com/docs/eloquent',
+  description:
+    'Elegant ORM included with Laravel that provides a simple ActiveRecord implementation for working with databases',
+  category: 'Database Tools',
+});
+
+export const sequelize = createSkillFactory({
+  name: 'Sequelize',
+  icon: 'simple-icons:sequelize',
+  iconColor: '#52B0E7',
+  url: 'https://sequelize.org/',
+  description: 'Promise-based Node.js ORM for PostgreSQL, MySQL, MariaDB, SQLite and SQL Server',
+  category: 'Database Tools',
+});
+
+export const prisma = createSkillFactory({
+  name: 'Prisma',
+  icon: 'simple-icons:prisma',
+  iconColor: '#2D3748',
+  url: 'https://www.prisma.io/',
+  description: 'Next-generation ORM for Node.js and TypeScript with type-safety and auto-generated queries',
+  category: 'Database Tools',
+});
+
 // PYTHON ECOSYSTEM
 export const python = createSkillFactory({
   name: 'Python',
