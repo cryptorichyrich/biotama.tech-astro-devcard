@@ -115,14 +115,6 @@ const certificationSectionData = {
       links: [website({ url: 'https://www.udemy.com/course/flutter-mobile-development/' })],
     },
     {
-      title: 'Project Management Certification',
-      institution: 'Udemy',
-      image: import('@/assets/udemy-logo.png'),
-      dates: [new Date('2020.09')],
-      description: 'Professional project management certification covering PMP/PMI methodologies.',
-      links: [website({ url: 'https://www.udemy.com/course/project-management-certification/' })],
-    },
-    {
       title: 'Machine Learning A-Z',
       institution: 'Udemy',
       image: import('@/assets/udemy-logo.png'),
