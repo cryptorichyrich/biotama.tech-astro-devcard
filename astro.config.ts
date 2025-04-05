@@ -6,6 +6,8 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://biotama.tech',
+  base: '/',
   integrations: [tailwind(), image(), compress()],
   vite: {
     plugins: [visualizer()],
