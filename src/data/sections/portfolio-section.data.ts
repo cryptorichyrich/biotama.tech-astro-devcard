@@ -41,6 +41,7 @@ import {
   digitalOcean,
   googleCloud,
   railway,
+  bootstrap,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -315,7 +316,7 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         The implementation leveraged HubSpot Development tools and custom modules to create dynamic content templates optimized for different news categories including market updates, economic calendars, and analyst insights. I designed intuitive navigation systems and content filtering mechanisms that allow users to quickly find relevant information based on asset classes, regions, or impact levels. Throughout the nearly five-year development cycle, I continuously refined the user experience based on engagement metrics and feedback, implementing responsive designs that maintain consistency across devices. This specialized news platform became a valuable extension of BaxiaMarkets' service offerings, providing clients with timely market intelligence while simultaneously serving as a content marketing engine that established the company's thought leadership in the financial sector.`,
       tagsList: {
         title: 'Technologies',
-        tags: [hubspotCms(), hubspotDevelopment()],
+        tags: [hubspotCms(), hubspotDevelopment(), html5(), css3(), bootstrap(), javascript()],
       },
       links: [website({ url: 'https://news.baxiamarkets.com' })],
     },
