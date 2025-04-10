@@ -16,14 +16,4 @@ const sizeToClass = /* tw */ {
 };
 ---
 
-{
-  src && (
-    <Photo
-      src={src}
-      alt={alt}
-      class:list={['hidden rounded-md sm:block', sizeToClass[size]]}
-      width={104}
-      height={104}
-    />
-  )
-}
+{src && <Photo src={src} alt={alt} class:list={['rounded-md sm:block', sizeToClass[size]]} width={104} height={104} />}

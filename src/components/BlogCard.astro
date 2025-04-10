@@ -1,0 +1,30 @@
+---
+// src/components/BlogCard.astro
+// Component for displaying blog post previews
+const { title, excerpt, date, url, image = '/images/blog-placeholder.jpg' } = Astro.props;
+---
+
+<article class="overflow-hidden rounded-lg bg-white shadow-md transition hover:shadow-lg">
+  <a href={url} class="block">
+    <img src={image} alt={title} class="h-48 w-full object-cover" />
+  </a>
+  <div class="p-6">
+    <div class="mb-2 text-sm text-[#c69863]">{date}</div>
+    <a href={url} class="block">
+      <h3 class="hover:text-green-800 mb-3 text-xl font-bold text-gray-800 transition">{title}</h3>
+    </a>
+    <p class="mb-4 text-gray-600">{excerpt}</p>
+    <a href={url} class="text-green-800 inline-flex items-center font-medium hover:underline">
+      Baca Selengkapnya
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="ml-1 h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
+  </div>
+</article>

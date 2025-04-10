@@ -1,0 +1,26 @@
+---
+// src/components/SacramentCard.astro
+// Component for displaying sacrament cards in the home page
+const { title, image, url } = Astro.props;
+---
+
+<a href={url} class="group">
+  <div class="overflow-hidden rounded-lg bg-white shadow-md transition hover:shadow-lg">
+    <div class="relative h-44 overflow-hidden">
+      <div class="bg-black/20 group-hover:bg-black/40 absolute inset-0 transition-all duration-300"></div>
+      <img
+        src={image}
+        alt={title}
+        class="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
+      />
+      <div class="absolute bottom-0 w-full p-4">
+        <h3 class="text-center text-lg font-bold text-white drop-shadow-md">{title}</h3>
+      </div>
+    </div>
+    <div class="flex justify-center p-3 text-center">
+      <span class="group-hover:text-green-800 text-sm font-medium text-[#c69863] transition-colors">
+        Pelajari Selengkapnya
+      </span>
+    </div>
+  </div>
+</a>
