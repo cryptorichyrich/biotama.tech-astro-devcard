@@ -43,6 +43,7 @@ import {
   railway,
   bootstrap,
   expressjs,
+  googleGeminiAi,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -59,14 +60,41 @@ const portfolioSectionData = {
   info: '',
   projects: [
     {
+      name: 'Next & FastAPI Sales Dashboard with Gemini AI Sales Chatbot',
+      //image: import('@/assets/portfolio/project-1.jpeg'),
+      dates: [new Date('2025-04'), new Date('2025-04')],
+      details: [
+        { label: 'Team size', value: '1 person' },
+        { label: 'My role', value: ['Front-end Developer'] },
+        { label: 'Company', value: 'Personal Project' },
+        { label: 'Category', value: ['Web app'] },
+      ],
+      pdfDetails: [
+        { label: 'Live', value: 'https://github.com/cryptorichyrich/Sales-Dashboard-FastApi-Next', url: '#' },
+      ],
+      // screenshots: [
+      //   { src: import('@/assets/portfolio/project-1-screenshot-1.jpg'), alt: 'First screenshot' },
+      //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
+      //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
+      // ],
+      description: `This project is a full-stack sales dashboard application consisting of a FastAPI backend and a Next.js frontend. The backend, built with Python, serves sales representative data from a JSON file and integrates Google's Gemini AI model to provide intelligent responses to sales-related queries. Key backend features include endpoints for retrieving sales data, generating AI-powered insights, and calculating sales analytics. The system uses dummy sales representative data that includes information on representatives' regions, skills, deals, and clients, with appropriate CORS configuration to allow cross-origin requests from the frontend.
+      <span></span>
+The frontend is developed with Next.js and React, featuring a responsive interface built with Tailwind CSS. It displays sales representative information in cards that can be filtered by region, and includes an AI chat section where users can ask questions about sales data. The application architecture is well-organized with separate components for layout, sales representation, and AI chat functionality. Custom React hooks manage data fetching and chat state, while the UI components handle the presentation of sales data and formatting of AI responses. The chat interface supports markdown rendering, making the AI responses more readable with proper formatting for headings, code blocks, and other elements.`,
+      tagsList: {
+        title: 'Technologies',
+        tags: [react(), nextJs(), googleGeminiAi(), tailwindCss(), html5(), githubActions(), javascript()],
+      },
+      links: [website({ url: '#' })],
+    },
+    {
       name: 'Vavelle Crispy Pork Belly',
       //image: import('@/assets/portfolio/project-1.jpeg'),
       dates: [new Date('2025'), null],
       details: [
         { label: 'Team size', value: '1 person' },
         { label: 'My role', value: ['Front-end Developer'] },
-        { label: 'Company', value: 'Vavelle & Co' },
-        { label: 'Category', value: ['Web app'] },
+        { label: 'Company', value: 'Self' },
+        { label: 'Category', value: ['Web app, AI'] },
       ],
       pdfDetails: [{ label: 'Live', value: 'https://crispyporkbelly.vavelleco.com/', url: '#' }],
       // screenshots: [

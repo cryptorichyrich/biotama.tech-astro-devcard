@@ -15,6 +15,24 @@ skill({ level: 3 }) — returns a levelled-skill. It can be used only in skills-
 skill({ name: '...' }) — returns skill object with a custom name.
 skill({ description: '...' }) — returns skill with a description displayed when user hovers over it.
 */
+export const googleGeminiAi = createSkillFactory({
+  name: 'Google Gemini AI',
+  icon: 'simple-icons:google', // Note: simple-icons might not have a specific icon for Gemini, use a custom icon if needed
+  iconColor: '#4285F4', // Google's brand color
+  url: 'https://blog.google/technology/ai/google-gemini-ai/',
+  description: "Google's next-generation AI model for generating text, images, and other content",
+  category: 'Artificial Intelligence',
+});
+
+export const fastApi = createSkillFactory({
+  name: 'FastAPI',
+  icon: 'simple-icons:fastapi',
+  iconColor: '#009688',
+  url: 'https://fastapi.tiangolo.com/',
+  description:
+    'Modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints',
+  category: 'Web Frameworks',
+});
 
 export const digitalOcean = createSkillFactory({
   name: 'Digital Ocean',

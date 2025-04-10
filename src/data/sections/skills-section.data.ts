@@ -46,6 +46,7 @@ import {
   digitalOcean,
   googleCloud,
   sass,
+  fastApi,
 } from '../helpers/skills';
 
 const skillsSectionData = {
@@ -62,6 +63,7 @@ const skillsSectionData = {
       skills: [
         react({ level: 5 }),
         vue({ level: 2 }),
+        fastApi({ level: 4 }),
         astro({ level: 5 }),
         tailwindCss({ level: 5 }),
         nodejs({ level: 5 }),
@@ -94,7 +96,7 @@ const skillsSectionData = {
     {
       title: 'Backend Development',
       info: '',
-      skills: [nodejs(), expressjs(), nestJs(), php(), graphql(), java(), python()],
+      skills: [nodejs(), fastApi(), expressjs(), nestJs(), php(), graphql(), java(), python()],
     },
     {
       title: 'Full-Stack Development',
