@@ -70,7 +70,7 @@ const portfolioSectionData = {
         { label: 'Category', value: ['Web app'] },
       ],
       pdfDetails: [
-        { label: 'Live', value: 'https://github.com/cryptorichyrich/Sales-Dashboard-FastApi-Next', url: '#' },
+        { label: 'Github', value: 'https://github.com/cryptorichyrich/Sales-Dashboard-FastApi-Next', url: '#' },
       ],
       // screenshots: [
       //   { src: import('@/assets/portfolio/project-1-screenshot-1.jpg'), alt: 'First screenshot' },
@@ -84,7 +84,7 @@ The frontend is developed with Next.js and React, featuring a responsive interfa
         title: 'Technologies',
         tags: [react(), nextJs(), googleGeminiAi(), tailwindCss(), html5(), githubActions(), javascript()],
       },
-      links: [website({ url: '#' })],
+      links: [website({ url: 'https://github.com/cryptorichyrich/Sales-Dashboard-FastApi-Next' })],
     },
     {
       name: 'Vavelle Crispy Pork Belly',
