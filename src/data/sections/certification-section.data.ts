@@ -10,6 +10,16 @@ const certificationSectionData = {
     visible: true,
   },
   certificates: [
+    {
+      title:
+        'Master Functional Programming techniques with Elixir and Phoenix while learning to build compelling web applications!',
+      institution: 'Udemy',
+      image: import('@/assets/udemy-logo.png'),
+      dates: [new Date('2025.04')],
+      description:
+        "This course teaches Elixir and Phoenix, covering functional programming fundamentals, building fast web applications, and integrating Postgres and OAuth. You'll learn to think with a functional programming mindset, master Elixir syntax, and build compelling web apps with Phoenix.",
+      links: [website({ url: 'https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/' })],
+    },
     // 2024 Certifications (Udemy)
     {
       title: 'Next JS & WordPress: Build Rapid NextJS Sites',
