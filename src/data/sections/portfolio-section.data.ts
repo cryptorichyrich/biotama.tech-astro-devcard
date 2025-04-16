@@ -11,6 +11,7 @@ import {
   html5,
   hubspotCms,
   hubspotDevelopment,
+  fastApi,
   java,
   javascript,
   jekyll,
@@ -82,7 +83,7 @@ const portfolioSectionData = {
 The frontend is developed with Next.js and React, featuring a responsive interface built with Tailwind CSS. It displays sales representative information in cards that can be filtered by region, and includes an AI chat section where users can ask questions about sales data. The application architecture is well-organized with separate components for layout, sales representation, and AI chat functionality. Custom React hooks manage data fetching and chat state, while the UI components handle the presentation of sales data and formatting of AI responses. The chat interface supports markdown rendering, making the AI responses more readable with proper formatting for headings, code blocks, and other elements.`,
       tagsList: {
         title: 'Technologies',
-        tags: [react(), nextJs(), googleGeminiAi(), tailwindCss(), html5(), githubActions(), javascript()],
+        tags: [fastApi(), react(), nextJs(), googleGeminiAi(), tailwindCss(), html5(), githubActions(), javascript()],
       },
       links: [website({ url: 'https://github.com/cryptorichyrich/Sales-Dashboard-FastApi-Next' })],
     },
