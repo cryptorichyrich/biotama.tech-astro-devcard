@@ -45,6 +45,7 @@ import {
   bootstrap,
   expressjs,
   googleGeminiAi,
+  groqCloudAi,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -61,6 +62,33 @@ const portfolioSectionData = {
   info: '',
   projects: [
     {
+      name: 'Vavelle AI Chat Interface',
+      //image: import('@/assets/portfolio/project-1.jpeg'),
+      dates: [new Date('2025-04'), new Date('2025-04')],
+      details: [
+        { label: 'Team size', value: '1 person' },
+        { label: 'My role', value: ['Front-end Developer'] },
+        { label: 'Company', value: 'Personal Project' },
+        { label: 'Category', value: ['AI Web app'] },
+      ],
+      pdfDetails: [
+        { label: 'Github', value: 'https://github.com/cryptorichyrich/Vavelle_AI_Chat_Interface', url: '#' },
+      ],
+      // screenshots: [
+      //   { src: import('@/assets/portfolio/project-1-screenshot-1.jpg'), alt: 'First screenshot' },
+      //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
+      //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
+      // ],
+      description: `Developed Vavelle AI Chat Interface, a modern real-time chat application powered by GroqCloud's large language models. Built with React and Tailwind CSS, the application features a responsive dark-mode UI with syntax highlighting for code blocks, markdown-style formatting, and seamless conversation history management. Implemented efficient state management using React hooks and optimized API token usage to balance conversation context with cost efficiency.
+      <span></span>
+Architected a secure deployment strategy by creating a backend proxy server to protect API credentials, eliminating the need for client-side API key exposure. The application includes error handling, loading states, and user experience enhancements such as auto-scrolling and message timestamps. Successfully deployed the solution with comprehensive documentation for multiple platforms including Vercel, Netlify, and Docker, demonstrating full-stack development capabilities and security best practices.`,
+      tagsList: {
+        title: 'Technologies',
+        tags: [react(), tailwindCss(), groqCloudAi()],
+      },
+      links: [website({ url: 'https://github.com/cryptorichyrich/Vavelle_AI_Chat_Interface' })],
+    },
+    {
       name: 'Next & FastAPI Sales Dashboard with Gemini AI Sales Chatbot',
       //image: import('@/assets/portfolio/project-1.jpeg'),
       dates: [new Date('2025-04'), new Date('2025-04')],
@@ -68,7 +96,7 @@ const portfolioSectionData = {
         { label: 'Team size', value: '1 person' },
         { label: 'My role', value: ['Front-end Developer'] },
         { label: 'Company', value: 'Personal Project' },
-        { label: 'Category', value: ['Web app'] },
+        { label: 'Category', value: ['AI Web app'] },
       ],
       pdfDetails: [
         { label: 'Github', value: 'https://github.com/cryptorichyrich/Sales-Dashboard-FastApi-Next', url: '#' },

@@ -15,6 +15,15 @@ skill({ level: 3 }) — returns a levelled-skill. It can be used only in skills-
 skill({ name: '...' }) — returns skill object with a custom name.
 skill({ description: '...' }) — returns skill with a description displayed when user hovers over it.
 */
+export const groqCloudAi = createSkillFactory({
+  name: 'GroqCloud AI',
+  icon: 'carbon:cloud', // You can use a cloud icon to represent GroqCloud
+  iconColor: '#3498db', // A blue color to represent cloud technology
+  url: 'https://www.groq.com/', // Groq's official website
+  description: 'GroqCloud AI provides high-performance AI computing for generating text, images, and other content',
+  category: 'Artificial Intelligence',
+});
+
 export const googleGeminiAi = createSkillFactory({
   name: 'Google Gemini AI',
   icon: 'simple-icons:google', // Note: simple-icons might not have a specific icon for Gemini, use a custom icon if needed
