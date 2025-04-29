@@ -136,7 +136,7 @@ The frontend is developed with Next.js and React, featuring a responsive interfa
         title: 'Technologies',
         tags: [react(), tailwindCss(), html5(), githubActions(), javascript()],
       },
-      links: [website({ url: '#' })],
+      links: [website({ url: 'https://crispyporkbelly.vavelleco.com/' })],
     },
     {
       name: 'Vavelle Car Rental',
