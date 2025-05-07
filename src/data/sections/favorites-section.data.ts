@@ -12,6 +12,30 @@ const favoritesSectionData = {
     title: 'Books I read',
     data: [
       {
+        image: 'https://content.packt.com/_/image/original/B31339/cover_image.jpg',
+        title: "React Key Concepts: An in-depth guide to React's core features , Second Edition",
+        author: 'Maximilian Schwarzmüller',
+        url: 'https://www.packtpub.com/en-us/product/react-key-concepts-9781836202264?srsltid=AfmBOoowSp_i61kzQodVll-yOMzgKuPPfU0lxw8Y_NaZdYZPY36dQsDJ',
+      },
+      {
+        image: 'https://learning.oreilly.com/library/cover/9781492043447/250w/',
+        title: 'Fundamentals of Software Architecture',
+        author: 'Mark Richards, Neal Ford',
+        url: 'https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/',
+      },
+      {
+        image: 'https://learning.oreilly.com/library/cover/9781098106058/250w/',
+        title: 'Foundations of Scalable Systems',
+        author: 'Ian Gorton',
+        url: 'https://www.oreilly.com/library/view/foundations-of-scalable/9781098106058/',
+      },
+      {
+        image: 'https://content.packt.com/_/image/original/B17297/cover_image.jpg',
+        title: 'React Application Architecture for Production',
+        author: 'Alan Alickovic',
+        url: 'https://www.packtpub.com/en-us/product/react-application-architecture-for-production-9781801070539',
+      },
+      {
         image: import('@/assets/favorites/books/book-1.jpeg'),
         title: 'The Pragmatic Programmer: From Journeyman to Master',
         author: 'Andy Hunt, Dave Thomas',
