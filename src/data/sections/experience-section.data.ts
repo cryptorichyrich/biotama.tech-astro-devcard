@@ -52,7 +52,7 @@ const experienceSectionData = {
       role: 'Web Developer & Co-Founder',
       company: 'Vavelle Crispy Pork Belly (Remote, JABODETABEKA, Indonesia)',
       image: import('@/assets/logos/VAVELLE.png'),
-      dates: [new Date('2023-06'), null],
+      dates: [new Date('2018-02'), null],
       description: `
 As a Web Developer and Co-Founder of Vavelle Crispy Pork Belly, I spearheaded the development of a dynamic e-commerce platform to showcase our premium crispy pork belly offerings across the JABODETABEKA region. Leveraging AstroJS, I designed and built a responsive, SEO-optimized website (https://crispyporkbelly.vavelleco.com/) that enhances user engagement and drives online orders. My role encompassed creating a seamless user experience, integrating secure payment gateways, and implementing marketing tools to promote our artisanal product.
 <span></span>
@@ -68,7 +68,7 @@ In addition to technical development, I collaborated with the team to craft a co
       role: 'Web Developer & Co-Founder',
       company: 'Travel to Bali Paradise (Remote, Bali, Indonesia)',
       image: import('@/assets/logos/travel-to-bali-paradise.png'),
-      dates: [new Date('2022-03'), null],
+      dates: [new Date('2025-06'), null],
       description: `
 As a Web Developer and Co-Founder of Travel to Bali Paradise, I led the creation of a vibrant, user-centric travel platform (https://traveltobaliparadise.com/) using AstroJS. This website empowers users to explore Bali’s hidden gems through curated tours and vehicle rentals, delivering a seamless booking experience. My responsibilities included architecting a responsive, SEO-optimized website, integrating booking and payment systems, and ensuring cross-device compatibility for global travelers.
 <span></span>
@@ -84,7 +84,7 @@ Beyond development, I collaborated closely with local partners to align the plat
       role: 'Senior Web Developer',
       company: 'CITT Services (Remote, Dallas, USA)',
       image: import('@/assets/logos/citt-logo.png'),
-      dates: [new Date('2014-01'), new Date('2024-10')],
+      dates: [new Date('2014-01'), new Date('2025-6')],
       description: `
 At CITT Services, I contributed to comprehensive technology consulting services that enabled client firms to expand their technical capabilities without the burden of hiring specialized staff. Working with financial sector clients including Pepperstone, TitanFX, BaxiaMarkets, Funded Prop BX, Traderscolo, and Liquidity Connect, I delivered expertise in web development, SEO optimization, backend infrastructure, and automated data synchronization systems.
 <span></span>
