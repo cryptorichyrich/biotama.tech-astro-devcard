@@ -33,6 +33,42 @@ export const googleGeminiAi = createSkillFactory({
   category: 'Artificial Intelligence',
 });
 
+export const seo = createSkillFactory({
+  name: 'SEO',
+  icon: 'simple-icons:googlesearchconsole',
+  iconColor: '#4584F7',
+  url: 'https://search.google.com/search-console',
+  description: 'Search Engine Optimization techniques to improve website visibility and ranking on search engines',
+  category: 'Digital Marketing',
+});
+
+export const googleAnalytics = createSkillFactory({
+  name: 'Google Analytics',
+  icon: 'simple-icons:googleanalytics',
+  iconColor: '#E37400',
+  url: 'https://analytics.google.com/',
+  description: 'Web analytics service for tracking and analyzing website traffic and user behavior',
+  category: 'Analytics',
+});
+
+export const astrojs = createSkillFactory({
+  name: 'AstroJS',
+  icon: 'simple-icons:astro',
+  iconColor: '#FF5D01',
+  url: 'https://astro.build/',
+  description: 'Modern static site generator for building fast, content-driven websites with island architecture',
+  category: 'Web Development',
+});
+
+export const tailwindcss = createSkillFactory({
+  name: 'Tailwind CSS',
+  icon: 'simple-icons:tailwindcss',
+  iconColor: '#38B2AC',
+  url: 'https://tailwindcss.com/',
+  description: 'Utility-first CSS framework for rapidly building custom user interfaces',
+  category: 'Web Development',
+});
+
 export const fastApi = createSkillFactory({
   name: 'FastAPI',
   icon: 'simple-icons:fastapi',
