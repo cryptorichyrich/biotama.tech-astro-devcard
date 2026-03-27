@@ -27,7 +27,7 @@ const mainSectionData = {
       url: 'https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/',
     },
     { label: 'GitHub', value: '/cryptorichyrich', url: 'https://github.com/cryptorichyrich' },
-    { label: 'Website', value: 'https://biotama.tech', url: '/', fullRow: true },
+    { label: 'Website', value: 'https://biotama.cv', url: '/', fullRow: true },
   ],
   description: `As a passionate full-stack developer specializing in financial technology, I transform complex financial processes into intuitive digital experiences across retail banking, commercial banking, and forex trading platforms. While my expertise spans the entire development stack, my focus over the past five years has centered on mastering modern JavaScript frameworks including React, Nest.Js, Astro.Js, Vue.js, and Next.js to create dynamic, responsive interfaces. I combine technical excellence with business acumen to deliver secure, high-performance solutions that satisfy both C-level stakeholders and end-users while maintaining strict regulatory compliance.`,
   tags: [{ name: 'Open for work' }, { name: 'Open for freelance' }, { name: 'Working on side project' }],
