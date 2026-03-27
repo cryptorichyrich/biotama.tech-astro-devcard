@@ -49,6 +49,38 @@ const experienceSectionData = {
   },
   jobs: [
     {
+      role: 'Co-Founder & CTO',
+      company: 'Srabutan.com (Remote, Indonesia)',
+      image: import('@/assets/logos/srabutan-logo.png'),
+      dates: [new Date('2024-01'), null],
+      description: `
+As Co-Founder and CTO of Srabutan.com, Indonesia's premier freelance marketplace, I lead the technical vision and execution of a platform that revolutionizes how businesses connect with talented freelancers. I architected a sophisticated matching system powered by AI algorithms that intelligently pairs clients with the most suitable professionals based on skills, experience, and project requirements. Our platform features comprehensive tools for portfolio management, real-time collaboration, secure payment processing, and project tracking—all designed to create seamless experiences for both Srabuters (freelancers) and clients.
+<span></span>
+My technical leadership encompasses full-stack development, infrastructure scaling, and continuous innovation to stay ahead of market demands. I've implemented robust security measures, optimized performance for high-traffic scenarios, and built a scalable microservices architecture to support rapid growth. Beyond technology, I collaborate closely with the business team to align product development with market needs, mentor engineering talent, and drive strategic decisions that have positioned Srabutan.com as a trusted platform connecting thousands of professionals with meaningful work opportunities across Indonesia.
+      `,
+      tagsList: {
+        title: 'Technologies',
+        tags: [react(), vue(), javascript(), html5(), css3(), tailwindcss(), git(), github(), githubActions(), docker(), dockerCompose(), python(), digitalOcean()],
+      },
+      links: [website({ url: 'https://srabutan.com/' }), linkedin({ url: 'https://linkedin.com/company/srabutan' })],
+    },
+    {
+      role: 'Founder',
+      company: 'TOKO VAVELLE (Remote, Jakarta, Indonesia)',
+      image: import('@/assets/logos/VAVELLE.png'),
+      dates: [new Date('2025-03'), null],
+      description: `
+As Founder of TOKO VAVELLE, I established Indonesia's premier destination for authentic Vietnam coffee, partnering directly with Trung Nguyen to bring the rich heritage of Vietnamese coffee culture to Indonesian consumers. I architected and developed a comprehensive e-commerce ecosystem that spans our flagship website (https://tokovavelle.com/) and multiple marketplace platforms including Tokopedia, Shopee, and Lazada. My role encompasses end-to-end business strategy, from product curation and supply chain management to digital marketing and customer experience optimization.
+<span></span>
+I spearheaded the technical development of our AstroJS-powered platform, implementing advanced SEO strategies, secure payment integrations, and inventory management systems. Beyond technology, I crafted our brand identity, established quality control protocols, and built strategic partnerships to ensure every product delivers an authentic Vietnam coffee experience. This entrepreneurial venture combines my passion for coffee culture with technical expertise, creating a platform that bridges two vibrant coffee traditions while delivering exceptional value to our growing customer base.
+      `,
+      tagsList: {
+        title: 'Technologies',
+        tags: [astrojs(), html5(), css3(), javascript(), tailwindcss(), git(), github(), seo(), googleAnalytics()],
+      },
+      links: [website({ url: 'https://tokovavelle.com/' })],
+    },
+    {
       role: 'Web Developer & Co-Founder',
       company: 'Vavelle Crispy Pork Belly (Remote, JABODETABEKA, Indonesia)',
       image: import('@/assets/logos/VAVELLE.png'),
@@ -70,7 +102,7 @@ In addition to technical development, I collaborated with the team to craft a co
       image: import('@/assets/logos/travel-to-bali-paradise.png'),
       dates: [new Date('2025-06'), null],
       description: `
-As a Web Developer and Co-Founder of Travel to Bali Paradise, I led the creation of a vibrant, user-centric travel platform (https://traveltobaliparadise.com/) using AstroJS. This website empowers users to explore Bali’s hidden gems through curated tours and vehicle rentals, delivering a seamless booking experience. My responsibilities included architecting a responsive, SEO-optimized website, integrating booking and payment systems, and ensuring cross-device compatibility for global travelers.
+As a Web Developer and Co-Founder of Travel to Bali Paradise, I led the creation of a vibrant, user-centric travel platform (https://traveltobaliparadise.com/) using AstroJS. This website empowers users to explore Bali's hidden gems through curated tours and vehicle rentals, delivering a seamless booking experience. My responsibilities included architecting a responsive, SEO-optimized website, integrating booking and payment systems, and ensuring cross-device compatibility for global travelers.
 <span></span>
 Beyond development, I collaborated closely with local partners to align the platform with authentic Balinese experiences, incorporating features like interactive destination guides and real-time availability for rentals. My technical contributions included optimizing site speed, implementing analytics for user behavior tracking, and maintaining a secure, scalable backend. This role combined my passion for technology and travel, creating a platform that inspires and facilitates unforgettable adventures in Bali.
     `,
