@@ -11,6 +11,15 @@ const certificationSectionData = {
   },
   certificates: [
     {
+      title: 'Master OpenClaw (ClawdBot) with Kimi K2.5: A Hands-On Guide',
+      institution: 'Udemy',
+      image: import('@/assets/udemy-logo.png'),
+      dates: [new Date('2026.04')],
+      description:
+        "This hands-on course is your practical, step-by-step guide to OpenClaw (ClawdBot) powered by Kimi K2.5. You'll go from zero to confidently running and deploying OpenClaw on AWS EC2, while understanding how it works behind the scenes and how to apply it to real-world scenarios.",
+      links: [website({ url: 'https://www.udemy.com/certificate/UC-6a2e4b90-955d-4946-a418-484853b03cd3/' })],
+    },
+    {
       title:
         'Master Functional Programming techniques with Elixir and Phoenix while learning to build compelling web applications!',
       institution: 'Udemy',
@@ -149,6 +158,6 @@ const certificationSectionData = {
       links: [website({ url: 'https://www.udemy.com/course/complete-machine-learning-course/' })],
     },
   ],
-} as const satisfies ReadonlyDeep<CertificationSection>;
+} as const satisfies ReadonlyDeep;
 
 export default certificationSectionData;
