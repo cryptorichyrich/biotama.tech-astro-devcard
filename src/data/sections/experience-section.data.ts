@@ -1,6 +1,6 @@
 import type { ExperienceSection } from '@/types/sections/experience-section.types';
 import type { ReadonlyDeep } from 'type-fest';
-import { facebook, githubLink, instagram, linkedin, website } from '../helpers/links';
+import { facebook, instagram, linkedin, website } from '../helpers/links';
 import {
   bootstrap,
   css3,
@@ -32,11 +32,7 @@ import {
   vue,
   windowsServer,
   wordpress,
-  astro,
   javascript,
-  seo,
-  googleAnalytics,
-  astrojs,
   tailwindcss,
 } from '../helpers/skills';
 
@@ -49,78 +45,52 @@ const experienceSectionData = {
   },
   jobs: [
     {
-      role: 'Co-Founder & CTO',
+      role: 'System Design & Architect',
       company: 'Srabutan.com (Remote, Indonesia)',
       image: import('@/assets/logos/srabutan-logo.png'),
-      dates: [new Date('2024-01'), null],
+      dates: [new Date('2026-01'), null],
       description: `
-As Co-Founder and CTO of Srabutan.com, Indonesia's premier freelance marketplace, I lead the technical vision and execution of a platform that revolutionizes how businesses connect with talented freelancers. I architected a sophisticated matching system powered by AI algorithms that intelligently pairs clients with the most suitable professionals based on skills, experience, and project requirements. Our platform features comprehensive tools for portfolio management, real-time collaboration, secure payment processing, and project tracking—all designed to create seamless experiences for both Srabuters (freelancers) and clients.
-<span></span>
-My technical leadership encompasses full-stack development, infrastructure scaling, and continuous innovation to stay ahead of market demands. I've implemented robust security measures, optimized performance for high-traffic scenarios, and built a scalable microservices architecture to support rapid growth. Beyond technology, I collaborate closely with the business team to align product development with market needs, mentor engineering talent, and drive strategic decisions that have positioned Srabutan.com as a trusted platform connecting thousands of professionals with meaningful work opportunities across Indonesia.
+Designed and architected the full technical infrastructure for Srabutan.com, Indonesia's premier freelance marketplace connecting businesses with talented freelancers.
+
+- Architected an AI-powered matching system that intelligently pairs clients with professionals based on skills, experience, and project requirements
+- Designed a scalable microservices architecture supporting portfolio management, real-time collaboration, secure payment processing, and project tracking
+- Implemented robust security measures and optimized performance for high-traffic scenarios
+- Led full-stack development, infrastructure scaling, and CI/CD pipelines using GitHub Actions, Docker, and DigitalOcean
+- Collaborated with the business team to align product development with market needs and drive strategic technical decisions
       `,
       tagsList: {
         title: 'Technologies',
-        tags: [react(), vue(), javascript(), html5(), css3(), tailwindcss(), git(), github(), githubActions(), docker(), dockerCompose(), python(), digitalOcean()],
+        tags: [
+          react(),
+          vue(),
+          javascript(),
+          html5(),
+          css3(),
+          tailwindcss(),
+          git(),
+          github(),
+          githubActions(),
+          docker(),
+          dockerCompose(),
+          python(),
+          digitalOcean(),
+        ],
       },
       links: [website({ url: 'https://srabutan.com/' }), linkedin({ url: 'https://linkedin.com/company/srabutan' })],
-    },
-    {
-      role: 'Founder',
-      company: 'TOKO VAVELLE (Remote, Jakarta, Indonesia)',
-      image: import('@/assets/logos/VAVELLE.png'),
-      dates: [new Date('2025-03'), null],
-      description: `
-As Founder of TOKO VAVELLE, I established Indonesia's premier destination for authentic Vietnam coffee, partnering directly with Trung Nguyen to bring the rich heritage of Vietnamese coffee culture to Indonesian consumers. I architected and developed a comprehensive e-commerce ecosystem that spans our flagship website (https://tokovavelle.com/) and multiple marketplace platforms including Tokopedia, Shopee, and Lazada. My role encompasses end-to-end business strategy, from product curation and supply chain management to digital marketing and customer experience optimization.
-<span></span>
-I spearheaded the technical development of our AstroJS-powered platform, implementing advanced SEO strategies, secure payment integrations, and inventory management systems. Beyond technology, I crafted our brand identity, established quality control protocols, and built strategic partnerships to ensure every product delivers an authentic Vietnam coffee experience. This entrepreneurial venture combines my passion for coffee culture with technical expertise, creating a platform that bridges two vibrant coffee traditions while delivering exceptional value to our growing customer base.
-      `,
-      tagsList: {
-        title: 'Technologies',
-        tags: [astrojs(), html5(), css3(), javascript(), tailwindcss(), git(), github(), seo(), googleAnalytics()],
-      },
-      links: [website({ url: 'https://tokovavelle.com/' })],
-    },
-    {
-      role: 'Web Developer & Co-Founder',
-      company: 'Vavelle Crispy Pork Belly (Remote, JABODETABEKA, Indonesia)',
-      image: import('@/assets/logos/VAVELLE.png'),
-      dates: [new Date('2018-02'), null],
-      description: `
-As a Web Developer and Co-Founder of Vavelle Crispy Pork Belly, I spearheaded the development of a dynamic e-commerce platform to showcase our premium crispy pork belly offerings across the JABODETABEKA region. Leveraging AstroJS, I designed and built a responsive, SEO-optimized website (https://crispyporkbelly.vavelleco.com/) that enhances user engagement and drives online orders. My role encompassed creating a seamless user experience, integrating secure payment gateways, and implementing marketing tools to promote our artisanal product.
-<span></span>
-In addition to technical development, I collaborated with the team to craft a compelling brand identity, streamline delivery logistics, and ensure a high-quality customer experience. My contributions included optimizing site performance, integrating analytics for data-driven insights, and maintaining a scalable infrastructure to support business growth. This entrepreneurial venture allowed me to blend technical expertise with business strategy, delivering a platform that reflects our commitment to culinary excellence.
-    `,
-      tagsList: {
-        title: 'Technologies',
-        tags: [astrojs(), html5(), css3(), javascript(), tailwindcss(), git(), github(), seo(), googleAnalytics()],
-      },
-      links: [website({ url: 'https://crispyporkbelly.vavelleco.com/' })],
-    },
-    {
-      role: 'Web Developer & Co-Founder',
-      company: 'Travel to Bali Paradise (Remote, Bali, Indonesia)',
-      image: import('@/assets/logos/travel-to-bali-paradise.png'),
-      dates: [new Date('2025-06'), null],
-      description: `
-As a Web Developer and Co-Founder of Travel to Bali Paradise, I led the creation of a vibrant, user-centric travel platform (https://traveltobaliparadise.com/) using AstroJS. This website empowers users to explore Bali's hidden gems through curated tours and vehicle rentals, delivering a seamless booking experience. My responsibilities included architecting a responsive, SEO-optimized website, integrating booking and payment systems, and ensuring cross-device compatibility for global travelers.
-<span></span>
-Beyond development, I collaborated closely with local partners to align the platform with authentic Balinese experiences, incorporating features like interactive destination guides and real-time availability for rentals. My technical contributions included optimizing site speed, implementing analytics for user behavior tracking, and maintaining a secure, scalable backend. This role combined my passion for technology and travel, creating a platform that inspires and facilitates unforgettable adventures in Bali.
-    `,
-      tagsList: {
-        title: 'Technologies',
-        tags: [astro(), html5(), css3(), javascript(), tailwindcss(), git(), github(), seo(), googleAnalytics()],
-      },
-      links: [website({ url: 'https://traveltobaliparadise.com' })],
     },
     {
       role: 'Senior Web Developer',
       company: 'CITT Services (Remote, Dallas, USA)',
       image: import('@/assets/logos/citt-logo.png'),
-      dates: [new Date('2014-01'), new Date('2025-6')],
+      dates: [new Date('2014-01'), new Date('2025-12')],
       description: `
-At CITT Services, I contributed to comprehensive technology consulting services that enabled client firms to expand their technical capabilities without the burden of hiring specialized staff. Working with financial sector clients including Pepperstone, TitanFX, BaxiaMarkets, Funded Prop BX, Traderscolo, and Liquidity Connect, I delivered expertise in web development, SEO optimization, backend infrastructure, and automated data synchronization systems.
-<span></span>
-My technical accomplishments included developing responsive and user-friendly web applications, implementing SEO strategies to improve online visibility, architecting robust backend systems, and creating automated data workflows that enhanced operational efficiency. These projects required close collaboration with stakeholders to understand their technical requirements and business objectives, resulting in scalable solutions that modernized their digital infrastructure while maintaining security and performance standards.
+Delivered comprehensive technology consulting services for financial sector clients including Pepperstone, TitanFX, BaxiaMarkets, Funded Prop BX, Traderscolo, and Liquidity Connect.
+
+- Developed responsive, user-friendly web applications using React, Vue, WordPress, Laravel, and HubSpot CMS
+- Implemented SEO strategies that significantly improved online visibility and organic traffic for client platforms
+- Architected robust backend systems and automated data synchronization workflows using n8n, Python, and Flask
+- Built and maintained Docker-based deployment pipelines on DigitalOcean and Google Cloud infrastructure
+- Collaborated closely with stakeholders to deliver scalable solutions modernizing digital infrastructure while meeting security and performance standards
       `,
       tagsList: {
         title: 'Technologies',
@@ -165,9 +135,13 @@ My technical accomplishments included developing responsive and user-friendly we
       image: import('@/assets/logos/wirecard.png'),
       dates: [new Date('2011-08'), new Date('2013-12')],
       description: `
-At PT. Aprisma Indonesia (a Wirecard A.G. subsidiary), I served as a host integrator specializing in payment gateway implementations. I engineered robust payment processing solutions by integrating Aprisma's proprietary Prisma Gateway technology with clients' banking systems. My technical contributions included developing custom API connections, implementing secure transaction protocols, and configuring end-to-end payment flows across multiple channels.
-<span></span>
-Daily responsibilities encompassed writing integration code, troubleshooting complex payment scenarios, optimizing transaction processing efficiency, and ensuring PCI-DSS compliance. I designed automated testing frameworks to validate payment workflows and created technical documentation for system administrators. This role demanded advanced knowledge of web services, encryption methods, financial transaction protocols, and cross-platform integration techniques while working within an enterprise environment serving Wirecard's global network of 14,000+ corporate clients across 69 countries.
+Engineered payment gateway integrations at PT. Aprisma Indonesia (a Wirecard A.G. subsidiary), connecting Prisma Gateway technology with clients' banking systems serving 14,000+ corporate clients across 69 countries.
+
+- Developed custom API connections and secure transaction protocols for end-to-end payment flows across multiple channels
+- Wrote integration code and troubleshot complex payment scenarios to optimize transaction processing efficiency
+- Ensured PCI-DSS compliance across all payment processing implementations
+- Designed automated testing frameworks to validate payment workflows
+- Created technical documentation for system administrators covering web services, encryption, and financial transaction protocols
       `,
       tagsList: {
         title: 'Technologies',
@@ -179,6 +153,6 @@ Daily responsibilities encompassed writing integration code, troubleshooting com
       ],
     },
   ],
-} as const satisfies ReadonlyDeep<ExperienceSection>;
+} as const satisfies ReadonlyDeep;
 
 export default experienceSectionData;

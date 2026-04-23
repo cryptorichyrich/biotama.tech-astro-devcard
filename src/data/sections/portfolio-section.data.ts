@@ -6,6 +6,7 @@ import {
   TwitterSkill,
   eslint,
   facebookAds,
+  git,
   github,
   githubActions,
   html5,
@@ -46,6 +47,10 @@ import {
   expressjs,
   googleGeminiAi,
   groqCloudAi,
+  astrojs,
+  astro,
+  seo,
+  googleAnalytics,
 } from '../helpers/skills';
 
 const portfolioSectionData = {
@@ -61,6 +66,74 @@ const portfolioSectionData = {
   },
   info: '',
   projects: [
+    {
+      name: 'TOKO VAVELLE — Vietnam Coffee E-Commerce',
+      dates: [new Date('2025-03'), null],
+      details: [
+        { label: 'Team size', value: '1 person' },
+        { label: 'My role', value: ['Founder', 'Front-end Developer'] },
+        { label: 'Company', value: 'TOKO VAVELLE' },
+        { label: 'Category', value: ['E-commerce'] },
+      ],
+      pdfDetails: [{ label: 'Live', value: 'https://tokovavelle.com/', url: '#' }],
+      description: `Founded Indonesia's premier destination for authentic Vietnam coffee, partnering directly with Trung Nguyen to bring Vietnamese coffee culture to Indonesian consumers.
+
+- Architected and developed a comprehensive e-commerce ecosystem spanning the flagship website and multiple marketplace platforms (Tokopedia, Shopee, Lazada)
+- Built the AstroJS-powered platform with advanced SEO strategies, secure payment integrations, and inventory management systems
+- Crafted brand identity, established quality control protocols, and built strategic partnerships for authentic product delivery
+- Implemented data-driven marketing and customer experience optimization using Google Analytics
+      `,
+      tagsList: {
+        title: 'Technologies',
+        tags: [astrojs(), html5(), css3(), javascript(), tailwindCss(), git(), github(), seo(), googleAnalytics()],
+      },
+      links: [website({ url: 'https://tokovavelle.com/' })],
+    },
+    {
+      name: 'Vavelle Crispy Pork Belly',
+      dates: [new Date('2018-02'), null],
+      details: [
+        { label: 'Team size', value: '1 person' },
+        { label: 'My role', value: ['Co-Founder', 'Front-end Developer'] },
+        { label: 'Company', value: 'Vavelle & Co' },
+        { label: 'Category', value: ['E-commerce'] },
+      ],
+      pdfDetails: [{ label: 'Live', value: 'https://crispyporkbelly.vavelleco.com/', url: '#' }],
+      description: `Co-founded and developed a dynamic e-commerce platform showcasing premium crispy pork belly offerings across the JABODETABEKA region.
+
+- Designed and built a responsive, SEO-optimized website using AstroJS with Instagram-inspired gallery layout
+- Integrated WhatsApp ordering system that eliminated complex payment gateways while maintaining personal customer interactions
+- Optimized site performance, integrated analytics for data-driven insights, and maintained scalable infrastructure
+      `,
+      tagsList: {
+        title: 'Technologies',
+        tags: [astrojs(), html5(), css3(), javascript(), tailwindCss(), git(), github(), seo(), googleAnalytics()],
+      },
+      links: [website({ url: 'https://crispyporkbelly.vavelleco.com/' })],
+    },
+    {
+      name: 'Travel to Bali Paradise',
+      dates: [new Date('2025-06'), null],
+      details: [
+        { label: 'Team size', value: '1 person' },
+        { label: 'My role', value: ['Co-Founder', 'Front-end Developer'] },
+        { label: 'Company', value: 'Travel to Bali Paradise' },
+        { label: 'Category', value: ['Travel & Booking'] },
+      ],
+      pdfDetails: [{ label: 'Live', value: 'https://traveltobaliparadise.com/', url: '#' }],
+      description: `Co-founded and built a travel platform empowering users to explore Bali's hidden gems through curated tours and vehicle rentals.
+
+- Architected a responsive, SEO-optimized travel platform using AstroJS with cross-device compatibility for global travelers
+- Integrated booking and payment systems with real-time availability for tours and vehicle rentals
+- Collaborated with local partners to feature authentic Balinese experiences and interactive destination guides
+- Implemented analytics for user behavior tracking and optimized site speed for seamless user experience
+      `,
+      tagsList: {
+        title: 'Technologies',
+        tags: [astro(), html5(), css3(), javascript(), tailwindCss(), git(), github(), seo(), googleAnalytics()],
+      },
+      links: [website({ url: 'https://traveltobaliparadise.com' })],
+    },
     {
       name: 'Vavelle AI Chat Interface',
       //image: import('@/assets/portfolio/project-1.jpeg'),
@@ -79,9 +152,14 @@ const portfolioSectionData = {
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `Developed Vavelle AI Chat Interface, a modern real-time chat application powered by GroqCloud's large language models. Built with React and Tailwind CSS, the application features a responsive dark-mode UI with syntax highlighting for code blocks, markdown-style formatting, and seamless conversation history management. Implemented efficient state management using React hooks and optimized API token usage to balance conversation context with cost efficiency.
-      <span></span>
-Architected a secure deployment strategy by creating a backend proxy server to protect API credentials, eliminating the need for client-side API key exposure. The application includes error handling, loading states, and user experience enhancements such as auto-scrolling and message timestamps. Successfully deployed the solution with comprehensive documentation for multiple platforms including Vercel, Netlify, and Docker, demonstrating full-stack development capabilities and security best practices.`,
+      description: `A modern real-time chat application powered by GroqCloud's large language models with a responsive dark-mode UI.
+
+- Built with React and Tailwind CSS featuring syntax highlighting for code blocks and markdown-style formatting
+- Implemented efficient state management using React hooks with optimized API token usage for cost efficiency
+- Architected a backend proxy server to protect API credentials, eliminating client-side key exposure
+- Included error handling, loading states, auto-scrolling, and message timestamps for polished UX
+- Documented deployment for Vercel, Netlify, and Docker platforms
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [react(), tailwindCss(), groqCloudAi()],
@@ -106,9 +184,14 @@ Architected a secure deployment strategy by creating a backend proxy server to p
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `This project is a full-stack sales dashboard application consisting of a FastAPI backend and a Next.js frontend. The backend, built with Python, serves sales representative data from a JSON file and integrates Google's Gemini AI model to provide intelligent responses to sales-related queries. Key backend features include endpoints for retrieving sales data, generating AI-powered insights, and calculating sales analytics. The system uses dummy sales representative data that includes information on representatives' regions, skills, deals, and clients, with appropriate CORS configuration to allow cross-origin requests from the frontend.
-      <span></span>
-The frontend is developed with Next.js and React, featuring a responsive interface built with Tailwind CSS. It displays sales representative information in cards that can be filtered by region, and includes an AI chat section where users can ask questions about sales data. The application architecture is well-organized with separate components for layout, sales representation, and AI chat functionality. Custom React hooks manage data fetching and chat state, while the UI components handle the presentation of sales data and formatting of AI responses. The chat interface supports markdown rendering, making the AI responses more readable with proper formatting for headings, code blocks, and other elements.`,
+      description: `A full-stack sales dashboard with a FastAPI backend and Next.js frontend, integrating Google's Gemini AI for intelligent sales insights.
+
+- Built Python/FastAPI backend serving sales data with endpoints for retrieval, AI-powered insights, and analytics calculations
+- Developed Next.js/React frontend with Tailwind CSS featuring filterable sales rep cards by region
+- Integrated Gemini AI chat section for natural language queries about sales data with markdown rendering
+- Organized architecture with separate components for layout, sales representation, and AI chat functionality
+- Implemented custom React hooks for data fetching and chat state management
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [fastApi(), react(), nextJs(), googleGeminiAi(), tailwindCss(), html5(), githubActions(), javascript()],
@@ -131,7 +214,12 @@ The frontend is developed with Next.js and React, featuring a responsive interfa
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For Vavelle & Co, I developed a streamlined web application showcasing their signature Crispy Pork Belly product. As both front-end developer and designer on this solo project, I created an intuitive interface that beautifully highlights the product's quality while simplifying the ordering process. As for the gallery, I was inspired by Instagram's design, implementing a visually engaging grid layout that emphasizes the product's texture and presentation. The solution features mouth-watering product imagery, detailed descriptions, and customization options, culminating in a seamless WhatsApp integration that allows customers to finalize orders directly through messaging. This approach eliminated the need for complex payment gateways while maintaining the personal touch the client wanted in their customer interactions. The responsive design ensures accessibility across all devices, helping Vavelle expand their market reach while preserving their direct customer relationship model.`,
+      description: `A streamlined web application showcasing Vavelle & Co's signature Crispy Pork Belly product with an Instagram-inspired gallery and seamless ordering.
+
+- Created an intuitive interface highlighting product quality with visually engaging grid layout inspired by Instagram's design
+- Integrated WhatsApp ordering system eliminating complex payment gateways while maintaining personal customer interactions
+- Built responsive design ensuring accessibility across all devices for expanded market reach
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [react(), tailwindCss(), html5(), githubActions(), javascript()],
@@ -154,7 +242,13 @@ The frontend is developed with Next.js and React, featuring a responsive interfa
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For Vavelle & Co, I designed and developed a comprehensive car rental web application that streamlines the vehicle booking process. As the sole front-end developer and designer on this project, I created a cohesive six-page website with intuitive navigation and responsive design. The gallery page features an elegant display of the rental fleet with detailed car specifications, allowing customers to compare options easily. I implemented a user-friendly booking system that guides visitors through the rental process step by step, with clear date selection and vehicle availability indicators. The FAQ page addresses common customer questions with expandable sections for improved readability and information access. Throughout the site, I maintained Vavelle's brand identity while ensuring cross-device compatibility, resulting in a professional platform that effectively showcases their rental offerings while simplifying the reservation process for their customers.`,
+      description: `A comprehensive car rental web application for Vavelle & Co with a cohesive six-page design streamlining the vehicle booking process.
+
+- Created a cohesive six-page website with intuitive navigation, responsive design, and consistent brand identity
+- Built an elegant gallery page with detailed car specifications allowing customers to compare rental options
+- Implemented a step-by-step booking system with clear date selection and vehicle availability indicators
+- Designed an FAQ page with expandable sections for improved readability and information access
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [react(), tailwindCss(), html5(), githubActions(), javascript()],
@@ -177,9 +271,13 @@ The frontend is developed with Next.js and React, featuring a responsive interfa
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For Damai Kasih Channel, I spearheaded the development of a comprehensive religious digital platform that serves as a spiritual resource hub for the Indonesian Christian community. Working within a team of three, I took on the dual role of front-end developer and designer to create an intuitive, accessible experience across multiple applications. The centerpiece of my contribution is a sophisticated Bible application featuring multiple translations including "Terjemahan Baru," "Terjemahan Baru 2," "Vulgata," and "Greek Interlinear," along with specialized resources like the Bible Dictionary, Catholic Catechism, and Canonical Law texts.
-<span></span>
-My technical implementation focused on creating a cohesive JavaScript-based ecosystem that maintains consistency across various web applications while optimizing for performance. A notable enhancement I introduced is text-to-speech functionality, allowing users to listen to content rather than read—a feature I implemented across the blog section, Bible applications, and other web resources. This accessibility improvement has significantly expanded the platform's reach to users with visual impairments and those who prefer auditory learning. Throughout the ongoing development process since January 2023, I've continuously refined the user interface and added new features based on community feedback, creating a growing digital ministry that serves believers through modern technology.`,
+      description: `A comprehensive religious digital platform serving as a spiritual resource hub for the Indonesian Christian community.
+
+- Built a sophisticated Bible application featuring multiple translations (Terjemahan Baru, Terjemahan Baru 2, Vulgata, Greek Interlinear) with Bible Dictionary, Catholic Catechism, and Canonical Law texts
+- Implemented text-to-speech functionality across blog, Bible applications, and web resources for accessibility to visually impaired and auditory learners
+- Created a cohesive JavaScript-based ecosystem maintaining consistency across multiple web applications with performance optimization
+- Continuously refined UI and added features based on community feedback since January 2023
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [jekyll(), html5(), css3(), javascript()],
@@ -205,7 +303,13 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `I immersed myself in the GatsbyJS framework through an Udemy course by Eric Evans, marking my first hands-on experience with this powerful technology. Working independently as both front-end and back-end developer, I built a headless CMS solution that leverages WordPress for content management while GatsbyJS extracts and transforms this data into a lightning-fast static site. This architecture allowed me to combine the user-friendly content editing capabilities of WordPress with the performance benefits of a static site generator. Throughout the two-month development process, I gained valuable insights into modern JAMstack principles, GraphQL data querying, and the benefits of decoupled architecture. The project served as an excellent learning opportunity to understand how static site generation can dramatically improve page load times and overall performance while maintaining full content management flexibility.`,
+      description: `A headless CMS solution leveraging WordPress for content management with GatsbyJS generating a lightning-fast static site.
+
+- Built a decoupled architecture combining WordPress content editing with GatsbyJS static site generation
+- Implemented GraphQL data querying for efficient content extraction and transformation
+- Gained hands-on experience with JAMstack principles including dramatic page load time improvements
+- Learned decoupled architecture patterns maintaining full content management flexibility
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [gatsbyjs(), tailwindCss(), react(), wordpress(), graphql(), mysql(), dockerCompose()],
@@ -230,7 +334,13 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For my "NextJS Property" project, I applied the knowledge gained from my previous Gatsby experience but shifted to the NextJS framework to explore its unique capabilities. Working solo as both front-end and back-end developer, I created a complete property listing application that showcases real estate information with rich detail and intuitive navigation. Unlike my Gatsby project, NextJS allowed me to implement hybrid rendering strategies, using static generation for content-heavy pages while leveraging server-side rendering for dynamic search functionality. This approach provided the performance benefits of static sites with the flexibility needed for interactive features. The development process enhanced my understanding of React's ecosystem while revealing the practical differences between these two powerful frameworks. This personal project strengthened my full-stack capabilities and demonstrated how NextJS can be especially valuable for applications requiring both speed and dynamic content handling.RetryClaude can make mistakes. `,
+      description: `A property listing application built with NextJS, exploring hybrid rendering strategies for real estate information display.
+
+- Created a complete property listing application with rich detail and intuitive navigation using NextJS
+- Implemented hybrid rendering: static generation for content-heavy pages, server-side rendering for dynamic search
+- Combined performance benefits of static sites with flexibility needed for interactive features
+- Strengthened full-stack capabilities by comparing NextJS and GatsbyJS framework approaches
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [nextJs(), tailwindCss(), react(), wordpress(), graphql(), mysql(), dockerCompose()],
@@ -253,9 +363,14 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For my personal project "CrosSyncOrder," I designed and built a comprehensive Software as a Service (SaaS) solution targeting the Forex trading market's need for cross-platform trade synchronization. Working independently as both front-end and back-end developer, I created a system capable of copying trades from a single source trading account to multiple destination accounts across different platforms—MetaTrader 4, MetaTrader 5, and cTrader.
-<span></span>
-        The development process involved tackling complex technical challenges, including creating uniform interfaces for disparate trading platforms, implementing secure authentication protocols for accessing trading accounts, and designing a resilient real-time synchronization system with minimal latency. I built a user-friendly dashboard that provides detailed monitoring of trade copying status, performance metrics, and comprehensive logging. While the project remained in the personal development phase, it significantly enhanced my understanding of financial technology integration, multi-platform compatibility issues, and the architectural considerations needed for high-reliability financial applications that must operate with precision in time-sensitive environments.`,
+      description: `A SaaS solution for cross-platform trade synchronization in the Forex market, copying trades across MetaTrader 4, MetaTrader 5, and cTrader.
+
+- Designed a system copying trades from a single source account to multiple destinations across different trading platforms
+- Created uniform interfaces for disparate trading platforms with secure authentication protocols
+- Built a user-friendly dashboard with trade copying status monitoring, performance metrics, and comprehensive logging
+- Implemented real-time synchronization system with minimal latency using WebSocket and ZeroMQ
+- Containerized with Docker and Kubernetes for reliable deployment on Railway
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [
@@ -293,9 +408,13 @@ My technical implementation focused on creating a cohesive JavaScript-based ecos
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For Funded Prop Bx, I led the development of a comprehensive web application designed for proprietary trading funds management. Working with a team of three, I took on multiple roles spanning front-end development, design, and back-end implementation to create a cohesive platform that streamlines the evaluation and management of funded traders.
-<span></span>
-On the front-end, I designed an intuitive interface that balances aesthetic appeal with practical functionality, implementing responsive layouts using HTML5 and CSS3 that adapt seamlessly across devices. The back-end architecture leverages WordPress and PHP for content management and business logic, with custom MySQL database solutions handling complex trader performance metrics and account data. Throughout the nearly three-year development cycle, I maintained version control through GitHub, facilitating efficient collaboration and deployment processes. The resulting platform provides a robust infrastructure for trader evaluation, account management, and performance tracking, delivering a professional solution that operates at the intersection of financial technology and web development.`,
+      description: `A web application for proprietary trading funds management, streamlining evaluation and management of funded traders.
+
+- Designed an intuitive front-end interface with responsive HTML5/CSS3 layouts adapting seamlessly across devices
+- Built back-end architecture using WordPress and PHP with custom MySQL database solutions for trader performance metrics
+- Implemented robust infrastructure for trader evaluation, account management, and performance tracking
+- Maintained version control through GitHub with Docker-based deployment on DigitalOcean and Ubuntu
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [
@@ -329,9 +448,14 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For BaxiaMarkets, I spearheaded the development of a sophisticated financial services platform over a five-year period, implementing a specialized architecture that separated public-facing content from secure client operations. The public website was built using WordPress for its content management capabilities, creating an informative and marketing-focused company brochure that effectively communicated BaxiaMarkets' offerings and value proposition to potential clients.
-        <span></span>
-        The secure client area was developed using Laravel, providing a robust foundation for critical financial operations including account management and deposit functionality. I architected a comprehensive microservices infrastructure to integrate multiple payment service providers, ensuring seamless transaction processing while maintaining system modularity. For regulatory compliance, I implemented SumSub KYC technology, creating a frictionless yet thorough identity verification workflow. The front-end implementation for both the public site and client portal utilized React and Vue.js frameworks with HTML5 and CSS3, delivering responsive interfaces optimized for different user journeys. Throughout this complex project, I maintained strict version control via GitHub and built a scalable MySQL database architecture to support growing user volumes and transaction data. This carefully separated yet cohesive system architecture successfully balanced marketing objectives with stringent financial security requirements while providing an intuitive user experience.`,
+      description: `A sophisticated financial services platform with separated public-facing content and secure client operations, built over a five-year period.
+
+- Built public website using WordPress for content management and marketing-focused company brochure
+- Developed secure client area with Laravel for account management and deposit functionality
+- Architected microservices infrastructure integrating multiple payment service providers with seamless transaction processing
+- Implemented SumSub KYC technology for regulatory compliance with frictionless identity verification
+- Delivered responsive front-end interfaces using React and Vue.js with scalable MySQL database architecture
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [
@@ -370,9 +494,13 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
       //   { src: import('@/assets/portfolio/project-1-screenshot-2.jpg'), alt: 'Second screenshot' },
       //   { src: import('@/assets/portfolio/project-1-screenshot-3.jpg'), alt: 'Third screenshot' },
       // ],
-      description: `For the News BaxiaMarkets project, I led the development of a specialized financial news platform integrated within the broader BaxiaMarkets ecosystem. Working collaboratively with a team, I focused on creating an engaging and information-rich news experience using HubSpot CMS as the foundation. As the primary front-end developer and designer, I crafted a content delivery system that presents complex financial news and market analysis in an accessible, visually compelling format.
-        <span></span>
-        The implementation leveraged HubSpot Development tools and custom modules to create dynamic content templates optimized for different news categories including market updates, economic calendars, and analyst insights. I designed intuitive navigation systems and content filtering mechanisms that allow users to quickly find relevant information based on asset classes, regions, or impact levels. Throughout the nearly five-year development cycle, I continuously refined the user experience based on engagement metrics and feedback, implementing responsive designs that maintain consistency across devices. This specialized news platform became a valuable extension of BaxiaMarkets' service offerings, providing clients with timely market intelligence while simultaneously serving as a content marketing engine that established the company's thought leadership in the financial sector.`,
+      description: `A specialized financial news platform integrated within the BaxiaMarkets ecosystem using HubSpot CMS.
+
+- Built with HubSpot CMS creating dynamic content templates for market updates, economic calendars, and analyst insights
+- Designed intuitive navigation and content filtering by asset classes, regions, or impact levels
+- Continuously refined UX based on engagement metrics and feedback over a five-year development cycle
+- Implemented responsive designs maintaining consistency across devices as a content marketing engine
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [hubspotCms(), hubspotDevelopment(), html5(), css3(), bootstrap(), javascript()],
@@ -390,9 +518,13 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
         { label: 'Category', value: ['Mobile app'] },
       ],
       pdfDetails: [{ label: 'Live', value: 'https://traderscolo.com', url: 'https://traderscolo.com' }],
-      description: `For the Traderscolo Front-end and Back-end Development project, I served as a front-end developer within a robust 11-person team during a six-year period that transformed the company's digital service offerings. Working on Traderscolo's dedicated VPS (Virtual Private Server) rental platform for traders, I developed user interfaces that streamlined the process of selecting, configuring, and managing virtual servers optimized for trading applications.
-        <span></span>
-        The technical implementation leveraged WordPress for the customer-facing website and product information, while WHMCS provided the critical client management, billing, and service provisioning functionality. I created custom PHP solutions to enhance the integration between these platforms, developing specialized interfaces for VPS configuration options tailored to different trading software requirements. The underlying infrastructure was built on VMware virtualization technology, which enabled the reliable hosting and management of numerous client VPS instances. My work focused on creating intuitive dashboards for server management, usage monitoring, and service upgrades, making complex technical processes accessible to traders without IT backgrounds. This specialized hosting service allowed traders to run their automated trading systems continuously with minimal latency, providing them with a competitive edge in the markets.`,
+      description: `A dedicated VPS rental platform for traders within an 11-person team, streamlining virtual server selection, configuration, and management.
+
+- Built customer-facing website and product information using WordPress with WHMCS for client management, billing, and provisioning
+- Created custom PHP solutions enhancing WordPress-WHMCS integration with specialized VPS configuration interfaces
+- Developed intuitive dashboards for server management, usage monitoring, and service upgrades accessible to non-technical traders
+- Leveraged VMware virtualization infrastructure on DigitalOcean and Google Cloud for reliable VPS hosting
+      `,
       tagsList: {
         title: 'Technologies',
         tags: [wordpress(), whmcs(), php(), vmware(), windowsServer(), ubuntu(), digitalOcean(), googleCloud()],
@@ -400,6 +532,6 @@ On the front-end, I designed an intuitive interface that balances aesthetic appe
       links: [website({ url: 'https://traderscolo.com' })],
     },
   ],
-} as const satisfies ReadonlyDeep<PortfolioSection>;
+} as const satisfies ReadonlyDeep;
 
 export default portfolioSectionData;
