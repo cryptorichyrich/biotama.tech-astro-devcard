@@ -1,0 +1,179 @@
+---
+import Fonts from '@/components/fonts.astro';
+import cv from '@/data';
+import { getAllSlugs, getApplication } from '@/data/applications';
+
+export async function getStaticPaths() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const app = await getApplication(slug!);
+
+if (!app) {
+  return Astro.redirect('/applications');
+}
+
+const { config, sections } = cv();
+const { main } = sections;
+const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter — {main.fullName} — {app.position.title} at {app.company.name}</title>
+    <Fonts />
+  </head>
+  <body>
+    <div id="cover-letter" class="mx-auto max-w-[210mm] bg-white p-[20mm] print:p-0">
+
+      <!-- SENDER INFO -->
+      <div style="font-size: 11px; color: #334155; line-height: 1.8;">
+        <p style="margin: 0; font-weight: 700; color: #0f172a; font-size: 14px;">{main.fullName}</p>
+        <p style="margin: 0;">Jakarta, Indonesia</p>
+        <p style="margin: 0;">+62 813 9825 3186 • fxwisdom1@gmail.com</p>
+        <p style="margin: 0;">
+          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" style="color: #1d4ed8; text-decoration: none;">LinkedIn</a>
+          <span style="color: #94a3b8;"> • </span>
+          <a href="https://github.com/cryptorichyrich" style="color: #1d4ed8; text-decoration: none;">GitHub</a>
+          <span style="color: #94a3b8;"> • </span>
+          <a href="https://biotama.cv" style="color: #1d4ed8; text-decoration: none;">biotama.cv</a>
+        </p>
+      </div>
+
+      <!-- DATE -->
+      <p style="margin-top: 28px; font-size: 11px; color: #334155;">{today}</p>
+
+      <!-- RECIPIENT -->
+      <div style="margin-top: 20px; font-size: 11px; color: #334155; line-height: 1.8;">
+        {app.contact?.name && <p style="margin: 0;">{app.contact.name}</p>}
+        {app.contact?.title && <p style="margin: 0;">{app.contact.title}</p>}
+        <p style="margin: 0; font-weight: 600;">{app.company.name}</p>
+        {app.company.location && <p style="margin: 0;">{app.company.location}</p>}
+      </div>
+
+      <!-- SUBJECT -->
+      <p style="margin-top: 28px; font-size: 11px; font-weight: 700; color: #0f172a;">
+        RE: Application for {app.position.title}
+        {app.position.remote ? ' (Remote)' : ''}
+      </p>
+
+      <!-- SALUTATION -->
+      <p style="margin-top: 24px; font-size: 11px; color: #334155;">
+        Dear {app.contact?.name || 'Hiring Manager'},
+      </p>
+
+      <!-- OPENING — Hook -->
+      <p style="margin-top: 14px; font-size: 11px; line-height: 1.8; color: #334155;">
+        I am writing to express my strong interest in the <strong>{app.position.title}</strong> position at <strong>{app.company.name}</strong>. {app.tailoring.coverLetterHook}
+      </p>
+
+      <!-- BODY — Why You -->
+      <p style="margin-top: 14px; font-size: 11px; line-height: 1.8; color: #334155;">
+        With over <strong>10 years of fullstack engineering experience</strong> spanning fintech, e-commerce, and SaaS domains, I bring a rare combination of architectural depth and hands-on execution. My work has ranged from building payment gateways processing transactions across <strong>69 countries</strong> to designing real-time trade synchronization systems using WebSocket and microservices architecture.
+      </p>
+
+      <!-- BODY — Key Matches -->
+      <p style="margin-top: 14px; font-size: 11px; line-height: 1.8; color: #334155;">
+        What draws me to this role at {app.company.name} is the opportunity to apply my expertise in {app.tailoring.emphasizeSkills.slice(0, 4).join(', ')}, and {app.tailoring.emphasizeSkills[4] || 'modern cloud infrastructure'} to deliver real impact. Specifically:
+      </p>
+
+      <ul style="margin-top: 10px; padding-left: 0; list-style: none;">
+        {app.tailoring.keyAchievements.slice(0, 3).map((achievement: string) => (
+          <li style="font-size: 11px; line-height: 1.8; color: #334155; margin-bottom: 6px; padding-left: 16px; text-indent: -16px;">
+            <span style="color: #475569; margin-right: 4px;">•</span>
+            {achievement}
+          </li>
+        ))}
+      </ul>
+
+      <!-- BODY — Why This Company -->
+      <p style="margin-top: 14px; font-size: 11px; line-height: 1.8; color: #334155;">
+        I am particularly excited about {app.company.name}'s work in {app.company.industry}, and I believe my background in delivering {app.position.remote ? 'distributed, remote-first ' : ''}engineering solutions at scale aligns well with your team's goals. I thrive in environments where engineering excellence meets business impact — and I am confident I can contribute meaningfully from day one.
+      </p>
+
+      <!-- CLOSING -->
+      <p style="margin-top: 14px; font-size: 11px; line-height: 1.8; color: #334155;">
+        I would welcome the opportunity to discuss how my experience and skills can contribute to {app.company.name}'s continued success. I am available for a conversation at your earliest convenience and can be reached at +62 813 9825 3186 or fxwisdom1@gmail.com.
+      </p>
+
+      <p style="margin-top: 24px; font-size: 11px; color: #334155;">
+        Thank you for your time and consideration.
+      </p>
+
+      <p style="margin-top: 28px; font-size: 11px; color: #334155;">
+        Sincerely,<br/>
+        <strong style="color: #0f172a;">{main.fullName}</strong>
+      </p>
+
+      <!-- JOB DETAILS FOOTER -->
+      <div style="margin-top: 40px; padding-top: 14px; border-top: 1px solid #e2e8f0; font-size: 9px; color: #94a3b8;">
+        <p style="margin: 0;">
+          <strong style="color: #64748b;">Position:</strong> {app.position.title}
+          <span style="margin: 0 8px;">•</span>
+          <strong style="color: #64748b;">Company:</strong> {app.company.name}
+          <span style="margin: 0 8px;">•</span>
+          <strong style="color: #64748b;">Type:</strong> {app.position.type}
+          <span style="margin: 0 8px;">•</span>
+          <strong style="color: #64748b;">Location:</strong> {app.company.location}
+          {app.position.salaryRange && (
+            <><span style="margin: 0 8px;">•</span>
+            <strong style="color: #64748b;">Salary:</strong> {app.position.salaryRange}</>
+          )}
+        </p>
+        {app.source.url && (
+          <p style="margin: 6px 0 0 0;">
+            <strong style="color: #64748b;">Source:</strong>{' '}
+            <a href={app.source.url} style="color: #64748b; text-decoration: none;">{app.source.url}</a>
+          </p>
+        )}
+      </div>
+    </div>
+
+    <!-- BUTTONS (screen only) -->
+    <div class="print:hidden" style="position: fixed; bottom: 24px; right: 24px; display: flex; gap: 12px; z-index: 50;">
+      <button
+        id="download-pdf"
+        style="background-color: #1e293b; color: #ffffff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);"
+        onmouseover="this.style.backgroundColor='#334155'"
+        onmouseout="this.style.backgroundColor='#1e293b'"
+      >
+        ↓ Download PDF
+      </button>
+      <a
+        href="/resume/{app.slug}"
+        style="background-color: #ffffff; color: #334155; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; border: 1px solid #cbd5e1; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+        onmouseover="this.style.backgroundColor='#f8fafc'"
+        onmouseout="this.style.backgroundColor='#ffffff'"
+      >
+        ← Tailored Resume
+      </a>
+    </div>
+
+    <script>
+      document.getElementById('download-pdf')?.addEventListener('click', () => {
+        window.print();
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @media print {
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+  body {
+    font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+</style>

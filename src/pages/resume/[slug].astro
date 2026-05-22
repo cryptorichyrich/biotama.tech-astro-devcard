@@ -1,0 +1,242 @@
+---
+import Fonts from '@/components/fonts.astro';
+import cv from '@/data';
+import { getAllSlugs, getApplication } from '@/data/applications';
+
+export async function getStaticPaths() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const app = await getApplication(slug!);
+
+if (!app) {
+  return Astro.redirect('/applications');
+}
+
+const { config, sections } = cv();
+const { main, experience, education, certification } = sections;
+
+const formatDate = (date: Date | null) => {
+  if (!date) return 'Present';
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+};
+
+const statusColors: Record<string, string> = {
+  draft: '#6b7280',
+  applied: '#2563eb',
+  interview: '#d97706',
+  offer: '#059669',
+  rejected: '#dc2626',
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume — {main.fullName} — {app.position.title} at {app.company.name}</title>
+    <Fonts />
+  </head>
+  <body>
+    <div id="resume" class="mx-auto max-w-[210mm] bg-white p-[15mm] print:p-0">
+      <!-- HEADER -->
+      <header style="border-bottom: 2px solid #1e293b; padding-bottom: 14px;">
+        <h1 style="font-size: 24px; font-weight: 800; color: #0f172a; margin: 0; letter-spacing: -0.5px;">
+          {main.fullName}
+        </h1>
+        <p style="margin-top: 4px; font-size: 13px; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 2px;">
+          {app.position.title} &bull; {app.company.name}
+        </p>
+        <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 16px; font-size: 11px; color: #64748b;">
+          <span>+62 813 9825 3186</span>
+          <span>fxwisdom1@gmail.com</span>
+          <span>Jakarta, Indonesia</span>
+          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" style="color: #1d4ed8; text-decoration: none;">LinkedIn</a>
+          <a href="https://github.com/cryptorichyrich" style="color: #1d4ed8; text-decoration: none;">GitHub</a>
+          <a href="https://biotama.cv" style="color: #1d4ed8; text-decoration: none;">biotama.cv</a>
+        </div>
+      </header>
+
+      <!-- TARGETED SUMMARY -->
+      <section style="margin-top: 18px;">
+        <h2 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; margin: 0;">
+          Professional Summary
+        </h2>
+        <p style="margin-top: 8px; font-size: 11px; line-height: 1.7; color: #334155;">
+          {app.tailoring.customSummary}
+        </p>
+      </section>
+
+      <!-- KEY ACHIEVEMENTS -->
+      <section style="margin-top: 16px;">
+        <h2 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; margin: 0;">
+          Key Achievements
+        </h2>
+        <ul style="margin-top: 8px; padding-left: 0; list-style: none;">
+          {app.tailoring.keyAchievements.map((achievement: string) => (
+            <li style="font-size: 10.5px; line-height: 1.7; color: #334155; margin-bottom: 4px;">
+              <span style="color: #94a3b8; margin-right: 6px;">▸</span>
+              {achievement}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- WORK EXPERIENCE -->
+      <section style="margin-top: 16px;">
+        <h2 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; margin: 0;">
+          Professional Experience
+        </h2>
+
+        {experience.jobs.map((job) => (
+          <div style="margin-top: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <h3 style="font-size: 12px; font-weight: 700; color: #0f172a; margin: 0;">
+                {job.role}
+              </h3>
+              <span style="font-size: 10px; color: #94a3b8;">
+                {formatDate(job.dates[0])} — {formatDate(job.dates[1])}
+              </span>
+            </div>
+            <p style="font-size: 10.5px; font-weight: 600; color: #64748b; margin: 2px 0 0 0;">
+              {job.company}
+            </p>
+            <ul style="margin-top: 6px; padding-left: 0; list-style: none;">
+              {job.description.split('\n').filter((l: string) => l.trim().startsWith('-')).map((line: string) => (
+                <li style="font-size: 10px; line-height: 1.7; color: #475569; margin-bottom: 3px;">
+                  <span style="color: #94a3b8; margin-right: 6px;">•</span>
+                  {line.trim().replace(/^- /, '')}
+                </li>
+              ))}
+            </ul>
+            <p style="margin-top: 6px; font-size: 9px; color: #94a3b8;">
+              <span style="font-weight: 600; color: #64748b;">Tech:</span> {job.tagsList.tags.map((t: any) => t.name).join(' • ')}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      <!-- RELEVANT PROJECTS -->
+      <section style="margin-top: 16px;">
+        <h2 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; margin: 0;">
+          Relevant Projects
+        </h2>
+        <div style="margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          {app.tailoring.highlightProjects.map((project: string) => (
+            <div>
+              <h3 style="font-size: 10.5px; font-weight: 700; color: #0f172a; margin: 0;">
+                {project}
+              </h3>
+              <p style="font-size: 9.5px; line-height: 1.6; color: #64748b; margin-top: 3px;">
+                Full-stack development with scalable architecture, CI/CD pipelines, and production-grade deployment.
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- TARGETED SKILLS (ordered by job requirements) -->
+      <section style="margin-top: 16px;">
+        <h2 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; margin: 0;">
+          Technical Skills
+        </h2>
+        <div style="margin-top: 10px; font-size: 10.5px;">
+          <!-- Emphasized skills first -->
+          <div style="margin-bottom: 6px;">
+            <span style="font-weight: 700; color: #0f172a;">Core:</span>
+            <span style="color: #334155;"> {app.tailoring.emphasizeSkills.join(' • ')}</span>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="font-weight: 700; color: #0f172a;">Frontend:</span>
+            <span style="color: #334155;"> React • Next.js • Vue.js • Astro • TypeScript • Tailwind CSS • SASS • Bootstrap</span>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="font-weight: 700; color: #0f172a;">Backend:</span>
+            <span style="color: #334155;"> Node.js • NestJS • Express.js • FastAPI • Python • GraphQL • PHP • Java • Spring</span>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="font-weight: 700; color: #0f172a;">Agentic AI:</span>
+            <span style="color: #334155;"> Hermes Agent • ZeroClaw • OpenWork Labs</span>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="font-weight: 700; color: #0f172a;">Databases:</span>
+            <span style="color: #334155;"> PostgreSQL • MySQL • MongoDB • Oracle • Prisma • Sequelize</span>
+          </div>
+          <div style="margin-bottom: 6px;">
+            <span style="font-weight: 700; color: #0f172a;">DevOps & Cloud:</span>
+            <span style="color: #334155;"> Docker • Kubernetes • GitHub Actions • Jenkins • n8n • DigitalOcean • Railway • GCP • AWS</span>
+          </div>
+          <div>
+            <span style="font-weight: 700; color: #0f172a;">Languages:</span>
+            <span style="color: #334155;"> Indonesia (Native) • English (C1)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section style="margin-top: 16px;">
+        <h2 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; margin: 0;">
+          Education
+        </h2>
+        <div style="margin-top: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <div>
+              <h3 style="font-size: 11px; font-weight: 700; color: #0f172a; margin: 0;">
+                Bachelor of Information System — Swiss German University
+              </h3>
+              <p style="font-size: 10px; color: #64748b; margin: 2px 0 0 0;">
+                Specialization in Software Development • GPA 3.34
+              </p>
+            </div>
+            <span style="font-size: 10px; color: #94a3b8;">2007 — 2011</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- BUTTONS (screen only) -->
+    <div class="print:hidden" style="position: fixed; bottom: 24px; right: 24px; display: flex; gap: 12px; z-index: 50;">
+      <button
+        id="download-pdf"
+        style="background-color: #1e293b; color: #ffffff; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);"
+        onmouseover="this.style.backgroundColor='#334155'"
+        onmouseout="this.style.backgroundColor='#1e293b'"
+      >
+        ↓ Download PDF
+      </button>
+      <a
+        href="/applications"
+        style="background-color: #ffffff; color: #334155; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; border: 1px solid #cbd5e1; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+        onmouseover="this.style.backgroundColor='#f8fafc'"
+        onmouseout="this.style.backgroundColor='#ffffff'"
+      >
+        ← Applications
+      </a>
+    </div>
+
+    <script>
+      document.getElementById('download-pdf')?.addEventListener('click', () => {
+        window.print();
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @media print {
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+  body {
+    font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+</style>
