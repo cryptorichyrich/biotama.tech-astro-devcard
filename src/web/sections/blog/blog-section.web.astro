@@ -1,0 +1,244 @@
+---
+import { getCollection } from "astro:content";
+import SectionCard from "@/web/components/section-card.astro";
+import type { BlogSection } from "@/types/sections/blog-section.types";
+
+interface Props extends BlogSection {}
+
+const { config } = Astro.props;
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+const postsData = posts.map((post) => ({
+  slug: post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  pubDate: post.data.pubDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }),
+  tags: post.data.tags || [],
+  image: post.data.image || null,
+}));
+
+const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
+---
+
+<SectionCard {...config}>
+  <div id="blog-section">
+    <input
+      type="text"
+      id="blog-search"
+      placeholder="Search articles..."
+      class="mb-4 w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-400"
+    />
+
+    <div id="blog-tags" class="mb-4 flex flex-wrap gap-2">
+      {allTags.map((tag) => (
+        <button
+          data-tag={tag}
+          class="blog-tag rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 transition-colors hover:border-blue-400 hover:bg-blue-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:bg-blue-900/30"
+        >
+          {tag}
+        </button>
+      ))}
+    </div>
+
+    <div id="blog-articles" class="space-y-4">
+    </div>
+
+    <div id="blog-pagination" class="mt-6 flex items-center justify-between">
+      <button
+        id="blog-prev"
+        class="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-white dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:disabled:hover:bg-[#0f0f0f]"
+        disabled
+      >
+        Previous
+      </button>
+      <span id="blog-page-info" class="text-sm text-gray-500 dark:text-gray-400">
+        Page 1 of 1
+      </span>
+      <button
+        id="blog-next"
+        class="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-white dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:disabled:hover:bg-[#0f0f0f]"
+        disabled
+      >
+        Next
+      </button>
+    </div>
+
+    <div id="blog-no-results" class="hidden py-8 text-center text-gray-500 dark:text-gray-400">
+      No articles found
+    </div>
+  </div>
+
+  <script type="application/json" id="blog-data" set:html={JSON.stringify(postsData)} />
+
+  <script is:inline>
+    (function() {
+      var postsData = JSON.parse(document.getElementById('blog-data').textContent);
+      var searchInput = document.getElementById('blog-search');
+      var articlesContainer = document.getElementById('blog-articles');
+      var prevButton = document.getElementById('blog-prev');
+      var nextButton = document.getElementById('blog-next');
+      var pageInfo = document.getElementById('blog-page-info');
+      var noResults = document.getElementById('blog-no-results');
+      var tagButtons = document.querySelectorAll('.blog-tag');
+
+      var POSTS_PER_PAGE = 5;
+      var currentPage = 1;
+      var activeTag = null;
+      var filteredPosts = postsData.slice();
+
+      function renderPosts() {
+        articlesContainer.innerHTML = '';
+
+        if (filteredPosts.length === 0) {
+          noResults.classList.remove('hidden');
+          articlesContainer.classList.add('hidden');
+          updatePagination();
+          return;
+        }
+
+        noResults.classList.add('hidden');
+        articlesContainer.classList.remove('hidden');
+
+        var startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+        var endIndex = startIndex + POSTS_PER_PAGE;
+        var postsToShow = filteredPosts.slice(startIndex, endIndex);
+
+        postsToShow.forEach(function(post) {
+          var article = document.createElement('article');
+          article.className = 'overflow-hidden flex flex-col sm:flex-row rounded-lg border border-gray-200 bg-white shadow-sm transition-colors hover:border-blue-500 dark:border-gray-800 dark:bg-[#0f0f0f] dark:hover:border-blue-500';
+
+          var contentWrapper = document.createElement('div');
+          contentWrapper.className = 'flex-1 min-w-0 p-5';
+
+          if (post.image) {
+            var img = document.createElement('img');
+            img.src = post.image;
+            img.alt = post.title;
+            img.className = 'w-full h-32 sm:w-36 sm:h-auto sm:min-h-full object-cover flex-shrink-0';
+            article.appendChild(img);
+          }
+
+          var title = document.createElement('a');
+          title.href = '/blog/' + post.slug;
+          title.className = 'text-xl font-semibold text-gray-900 hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400';
+          title.textContent = post.title;
+
+          var date = document.createElement('p');
+          date.className = 'mt-1 text-sm text-gray-500 dark:text-gray-400';
+          date.textContent = post.pubDate;
+
+          var description = document.createElement('p');
+          description.className = 'mt-2 text-gray-700 dark:text-gray-300';
+          description.textContent = post.description;
+
+          contentWrapper.appendChild(title);
+          contentWrapper.appendChild(date);
+          contentWrapper.appendChild(description);
+          article.appendChild(contentWrapper);
+
+          if (post.tags && post.tags.length > 0) {
+            var tagsContainer = document.createElement('div');
+            tagsContainer.className = 'mt-3 flex flex-wrap gap-2';
+
+            post.tags.forEach(function(tag) {
+              var tagSpan = document.createElement('span');
+              tagSpan.className = 'rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300';
+              tagSpan.textContent = tag;
+              tagsContainer.appendChild(tagSpan);
+            });
+
+            contentWrapper.appendChild(tagsContainer);
+          }
+
+          articlesContainer.appendChild(article);
+        });
+
+        updatePagination();
+      }
+
+      function updatePagination() {
+        var totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+        pageInfo.textContent = 'Page ' + currentPage + ' of ' + (totalPages || 1);
+
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage >= totalPages || totalPages === 0;
+      }
+
+      function applyFilters() {
+        var query = searchInput.value.toLowerCase().trim();
+
+        filteredPosts = postsData.filter(function(post) {
+          var matchesSearch = true;
+          if (query) {
+            var titleMatch = post.title.toLowerCase().indexOf(query) !== -1;
+            var descMatch = post.description.toLowerCase().indexOf(query) !== -1;
+            var tagMatch = post.tags.some(function(t) { return t.toLowerCase().indexOf(query) !== -1; });
+            matchesSearch = titleMatch || descMatch || tagMatch;
+          }
+
+          var matchesTag = true;
+          if (activeTag) {
+            matchesTag = post.tags.indexOf(activeTag) !== -1;
+          }
+
+          return matchesSearch && matchesTag;
+        });
+
+        currentPage = 1;
+        renderPosts();
+      }
+
+      function updateTagButtons() {
+        tagButtons.forEach(function(btn) {
+          if (btn.getAttribute('data-tag') === activeTag) {
+            btn.className = 'blog-tag rounded-full border border-gray-900 bg-gray-900 px-3 py-1 text-xs font-medium text-white transition-colors dark:border-blue-400 dark:bg-blue-500 dark:text-white';
+          } else {
+            btn.className = 'blog-tag rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 transition-colors hover:border-blue-400 hover:bg-blue-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:bg-blue-900/30';
+          }
+        });
+      }
+
+      var debounceTimeout;
+      searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(applyFilters, 300);
+      });
+
+      tagButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var tag = btn.getAttribute('data-tag');
+          if (activeTag === tag) {
+            activeTag = null;
+          } else {
+            activeTag = tag;
+          }
+          updateTagButtons();
+          applyFilters();
+        });
+      });
+
+      prevButton.addEventListener('click', function() {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPosts();
+        }
+      });
+
+      nextButton.addEventListener('click', function() {
+        var totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPosts();
+        }
+      });
+
+      renderPosts();
+    })();
+  </script>
+</SectionCard>

@@ -9,6 +9,7 @@ import type { PortfolioSection } from './sections/portfolio-section.types';
 import type { SkillsSection } from './sections/skills-section.types';
 import type { TestimonialsSection } from './sections/testimonials-section.types';
 import type { CertificationSection } from './sections/certification-section.types';
+import type { BlogSection } from './sections/blog-section.types';
 
 export type Config = {
   /**
@@ -32,6 +33,11 @@ export type Sections = {
    * Basic information about you.
    */
   main: MainSection;
+
+  /**
+   * Blog articles from content collections.
+   */
+  blog: BlogSection;
 
   /**
    * Grouped lists of your skills.
