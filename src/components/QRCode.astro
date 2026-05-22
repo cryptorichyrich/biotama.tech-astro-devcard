@@ -1,0 +1,45 @@
+---
+/**
+ * QR Code Component — generates a real, scannable QR code as inline SVG.
+ * Uses qrcode-generator (build-time only, no client-side JS needed).
+ */
+import qrcode from 'qrcode-generator';
+
+interface Props {
+  url: string;
+  size?: number;  // pixel size of the SVG
+  color?: string; // dark color
+}
+
+const { url, size = 18, color = '#1e293b' } = Astro.props;
+
+const qr = qrcode(0, 'L');
+qr.addData(url);
+qr.make();
+
+const moduleCount = qr.getModuleCount();
+const cellSize = size / moduleCount;
+
+// Build SVG path for filled cells
+let path = '';
+for (let row = 0; row < moduleCount; row++) {
+  for (let col = 0; col < moduleCount; col++) {
+    if (qr.isDark(row, col)) {
+      const x = col * cellSize;
+      const y = row * cellSize;
+      path += `M${x},${y}h${cellSize}v${cellSize}h-${cellSize}z`;
+    }
+  }
+}
+---
+
+<svg
+  viewBox={`0 0 ${size} ${size}`}
+  width={size}
+  height={size}
+  xmlns="http://www.w3.org/2000/svg"
+  style="display: inline-block; vertical-align: middle;"
+>
+  <rect width={size} height={size} fill="#ffffff" rx="1" />
+  <path d={path} fill={color} />
+</svg>

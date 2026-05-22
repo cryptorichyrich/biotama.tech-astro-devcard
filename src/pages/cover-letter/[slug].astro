@@ -1,5 +1,6 @@
 ---
 import Fonts from '@/components/fonts.astro';
+import QRCode from '@/components/QRCode.astro';
 import cv from '@/data';
 import { getAllSlugs, getApplication } from '@/data/applications';
 
@@ -36,12 +37,21 @@ const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '
         <p style="margin: 0; font-weight: 700; color: #0f172a; font-size: 14px;">{main.fullName}</p>
         <p style="margin: 0;">Jakarta, Indonesia</p>
         <p style="margin: 0;">+62 813 9825 3186 • fxwisdom1@gmail.com</p>
-        <p style="margin: 0;">
-          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" style="color: #1d4ed8; text-decoration: none;">LinkedIn</a>
+        <p style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" style="color: #1d4ed8; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+            <QRCode url="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" size={14} />
+            linkedin.com/in/agustinus-biotamalo
+          </a>
           <span style="color: #94a3b8;"> • </span>
-          <a href="https://github.com/cryptorichyrich" style="color: #1d4ed8; text-decoration: none;">GitHub</a>
+          <a href="https://github.com/cryptorichyrich" style="color: #1d4ed8; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+            <QRCode url="https://github.com/cryptorichyrich" size={14} />
+            github.com/cryptorichyrich
+          </a>
           <span style="color: #94a3b8;"> • </span>
-          <a href="https://biotama.cv" style="color: #1d4ed8; text-decoration: none;">biotama.cv</a>
+          <a href="https://biotama.cv" style="color: #1d4ed8; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+            <QRCode url="https://biotama.cv" size={14} />
+            biotama.cv
+          </a>
         </p>
       </div>
 

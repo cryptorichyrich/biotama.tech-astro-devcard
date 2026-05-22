@@ -1,5 +1,6 @@
 ---
 import Fonts from '@/components/fonts.astro';
+import QRCode from '@/components/QRCode.astro';
 import cv from '@/data';
 
 const { config, sections } = cv();
@@ -33,9 +34,20 @@ const formatDate = (date: Date | null) => {
           <span>+62 813 9825 3186</span>
           <span>fxwisdom1@gmail.com</span>
           <span>Jakarta, Indonesia</span>
-          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" class="text-blue-700 hover:underline">LinkedIn</a>
-          <a href="https://github.com/cryptorichyrich" class="text-blue-700 hover:underline">GitHub</a>
-          <a href="https://biotama.cv" class="text-blue-700 hover:underline">biotama.cv</a>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs">
+          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" class="text-blue-700 hover:underline flex items-center gap-2">
+            <QRCode url="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" size={18} />
+            linkedin.com/in/agustinus-biotamalo
+          </a>
+          <a href="https://github.com/cryptorichyrich" class="text-blue-700 hover:underline flex items-center gap-2">
+            <QRCode url="https://github.com/cryptorichyrich" size={18} />
+            github.com/cryptorichyrich
+          </a>
+          <a href="https://biotama.cv" class="text-blue-700 hover:underline flex items-center gap-2">
+            <QRCode url="https://biotama.cv" size={18} />
+            biotama.cv
+          </a>
         </div>
       </header>
 

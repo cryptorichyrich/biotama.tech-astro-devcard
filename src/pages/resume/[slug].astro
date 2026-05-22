@@ -1,5 +1,6 @@
 ---
 import Fonts from '@/components/fonts.astro';
+import QRCode from '@/components/QRCode.astro';
 import cv from '@/data';
 import { getAllSlugs, getApplication } from '@/data/applications';
 
@@ -54,9 +55,20 @@ const statusColors: Record<string, string> = {
           <span>+62 813 9825 3186</span>
           <span>fxwisdom1@gmail.com</span>
           <span>Jakarta, Indonesia</span>
-          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" style="color: #1d4ed8; text-decoration: none;">LinkedIn</a>
-          <a href="https://github.com/cryptorichyrich" style="color: #1d4ed8; text-decoration: none;">GitHub</a>
-          <a href="https://biotama.cv" style="color: #1d4ed8; text-decoration: none;">biotama.cv</a>
+        </div>
+        <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 16px; font-size: 11px;">
+          <a href="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" style="color: #1d4ed8; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <QRCode url="https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/" size={18} />
+            linkedin.com/in/agustinus-biotamalo
+          </a>
+          <a href="https://github.com/cryptorichyrich" style="color: #1d4ed8; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <QRCode url="https://github.com/cryptorichyrich" size={18} />
+            github.com/cryptorichyrich
+          </a>
+          <a href="https://biotama.cv" style="color: #1d4ed8; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <QRCode url="https://biotama.cv" size={18} />
+            biotama.cv
+          </a>
         </div>
       </header>
 
