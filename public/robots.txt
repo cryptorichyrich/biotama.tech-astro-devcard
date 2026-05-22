@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /applications/
+Disallow: /cover-letter/
+Disallow: /pdf/
+
+Sitemap: https://biotama.cv/sitemap.xml
