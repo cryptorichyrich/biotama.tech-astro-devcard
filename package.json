@@ -17,6 +17,7 @@
     "postbuild": "move-file ./src/pages/_pdf.astro ./src/pages/pdf.astro",
     "preview": "astro preview",
     "generate-pdf": "ts-node scripts/generate-pdf.ts",
+    "generate-resume-pdf": "ts-node scripts/generate-resume-pdf.ts",
     "generate-favicons": "ts-node scripts/generate-favicons.ts",
     "prettier:check": "prettier --check . --ignore-path .gitignore",
     "prettier:write": "prettier --write . --ignore-path .gitignore",
