@@ -47,6 +47,9 @@ import {
   googleCloud,
   sass,
   fastApi,
+  hermes,
+  openclaw,
+  openwork,
 } from '../helpers/skills';
 
 const skillsSectionData = {
@@ -74,7 +77,15 @@ const skillsSectionData = {
         dockerCompose({ level: 4 }),
         kubernetes({ level: 2 }),
         jekyll({ level: 5 }),
+        hermes({ level: 5 }),
+        openclaw({ level: 5 }),
+        openwork({ level: 5 }),
       ],
+    },
+    {
+      title: 'Agentic AI',
+      info: '',
+      skills: [hermes(), openclaw(), openwork()],
     },
     {
       title: 'Frontend Development',

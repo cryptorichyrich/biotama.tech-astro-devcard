@@ -816,6 +816,35 @@ export const jsf = createSkillFactory({
   category: 'Frontend Development',
 });
 
+// AI AGENTS
+export const hermes = createSkillFactory({
+  name: 'Hermes',
+  icon: 'mdi:robot-excited-outline',
+  iconColor: '#7C3AED',
+  url: 'https://hermes-agent.nousresearch.com/',
+  description:
+    'Autonomous AI agent partner for fullstack architecture, coding, debugging, and DevOps workflows',
+  category: 'AI Agents',
+});
+
+export const openclaw = createSkillFactory({
+  name: 'ZeroClaw',
+  icon: 'mdi:robot-angry-outline',
+  iconColor: '#EF4444',
+  url: 'https://github.com/cryptorichyrich/zeroclaw',
+  description: 'AI-powered automation and agent framework for cybersecurity and red teaming',
+  category: 'AI Agents',
+});
+
+export const openwork = createSkillFactory({
+  name: 'OpenWork Labs',
+  icon: 'mdi:robot-happy-outline',
+  iconColor: '#10B981',
+  url: 'https://github.com/cryptorichyrich/OpenWork',
+  description: 'Open-source AI agent platform for collaborative workflow automation',
+  category: 'AI Agents',
+});
+
 export const jekyll = createSkillFactory({
   name: 'Jekyll',
   icon: 'simple-icons:jekyll',
