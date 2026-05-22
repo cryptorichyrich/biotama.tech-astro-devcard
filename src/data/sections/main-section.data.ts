@@ -11,7 +11,7 @@ const mainSectionData = {
   },
   image: import('@/assets/my-image.jpeg'),
   fullName: 'Agustinus Biotamalo Lumbantoruan',
-  role: 'Web Developer',
+  role: 'System Architect & Fintech Engineer',
   details: [
     { label: 'Phone', value: '+62 813 9825 3186', url: 'tel:+62 813 9825 3186' },
     { label: 'Email', value: 'fxwisdom1@gmail.com', url: 'mailto:fxwisdom1@gmail.com' },
@@ -29,12 +29,11 @@ const mainSectionData = {
     { label: 'GitHub', value: '/cryptorichyrich', url: 'https://github.com/cryptorichyrich' },
     { label: 'Website', value: 'https://biotama.cv', url: '/', fullRow: true },
   ],
-  description: `As a passionate full-stack developer specializing in financial technology, I transform complex financial processes into intuitive digital experiences across retail banking, commercial banking, and forex trading platforms. While my expertise spans the entire development stack, my focus over the past five years has centered on mastering modern JavaScript frameworks including React, Nest.Js, Astro.Js, Vue.js, and Next.js to create dynamic, responsive interfaces. I combine technical excellence with business acumen to deliver secure, high-performance solutions that satisfy both C-level stakeholders and end-users while maintaining strict regulatory compliance.`,
-  tags: [{ name: 'Open for work' }, { name: 'Open for freelance' }, { name: 'Working on side project' }],
+  description: `I design systems that move money, connect markets, and scale under pressure. Over the past decade, I've built everything from PCI-DSS compliant payment gateways to full-stack fintech platforms for brands like Pepperstone and TitanFX. Currently architecting Srabutan, Indonesia's next freelance marketplace, from the ground up. Companies that handle real money trusted me to build what their business runs on.`,
+  tags: [{ name: 'Available for select partnerships' }],
   action: {
-    label: 'Download CV',
-    url: '/cv.pdf',
-    downloadedFileName: 'CV-Agustinus_Biotamalo_Lumbantpruan.pdf',
+    label: 'See my work',
+    url: '/resume',
   },
   links: [
     linkedin({ url: 'https://www.linkedin.com/in/agustinus-biotamalo-lumbantoruan-99126149/' }),

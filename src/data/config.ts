@@ -11,13 +11,12 @@ const config = {
     },
   },
   meta: {
-    title: 'Agustinus Biotamalo Lumbantoruan - Web Developer',
-    description: 'Professional web developer with over 10 years of experience',
+    title: 'Bio Lumbantoruan — System Architect & Fintech Engineer',
+    description: 'System architect specializing in fintech infrastructure. Payment gateways, marketplace platforms, and full-stack engineering.',
     faviconPath: '/src/assets/my-image.jpeg',
   },
   pdf: {
-    footer:
-      'I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process.',
+    footer: '',
   },
 } as const satisfies ReadonlyDeep<Config>;
 
