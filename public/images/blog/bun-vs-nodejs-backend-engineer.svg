@@ -1,0 +1,41 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#f5a623"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  
+  <!-- Bun icon (simplified) -->
+  <circle cx="350" cy="290" r="80" fill="none" stroke="#fbf0df" stroke-width="4"/>
+  <text x="350" y="305" font-family="monospace" font-size="42" fill="#fbf0df" text-anchor="middle" font-weight="bold">Bun</text>
+  
+  <!-- VS -->
+  <text x="510" y="305" font-family="Arial, sans-serif" font-size="36" fill="#e94560" text-anchor="middle" font-weight="bold">vs</text>
+  
+  <!-- Node icon (simplified) -->
+  <circle cx="680" cy="290" r="80" fill="none" stroke="#68a063" stroke-width="4"/>
+  <text x="680" y="305" font-family="monospace" font-size="36" fill="#68a063" text-anchor="middle" font-weight="bold">Node</text>
+
+  <!-- Title -->
+  <text x="600" y="430" font-family="Arial, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle" font-weight="bold">What I Care About as a Backend Engineer</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" fill="#a0aec0" text-anchor="middle">Benchmarks don't decide your runtime. Production reliability does.</text>
+
+  <!-- Author -->
+  <text x="600" y="560" font-family="Arial, sans-serif" font-size="16" fill="#718096" text-anchor="middle">Bio Lumbantoruan · biotama.cv</text>
+
+  <!-- Decorative dots -->
+  <circle cx="100" cy="580" r="3" fill="#e94560" opacity="0.5"/>
+  <circle cx="120" cy="590" r="2" fill="#f5a623" opacity="0.4"/>
+  <circle cx="1080" cy="100" r="3" fill="#68a063" opacity="0.5"/>
+  <circle cx="1100" cy="115" r="2" fill="#e94560" opacity="0.4"/>
+</svg>
