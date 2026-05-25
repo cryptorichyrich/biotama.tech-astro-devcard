@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Knowledge Graphs for AI Agents</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #020617;
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
+}
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(30,41,59,0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,41,59,0.35) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+svg { position: absolute; inset: 0; }
+
+/* Title overlay */
+.title-overlay {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  z-index: 10;
+}
+.title-overlay h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.title-overlay h1 span { color: #22d3ee; }
+.title-overlay .subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Bottom-right stats */
+.stats {
+  position: absolute;
+  bottom: 35px;
+  right: 60px;
+  z-index: 10;
+  display: flex;
+  gap: 32px;
+}
+.stat {
+  text-align: right;
+}
+.stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+.stat .label {
+  font-size: 9px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Glow effects */
+.glow-cyan { filter: drop-shadow(0 0 8px rgba(34,211,238,0.3)); }
+.glow-emerald { filter: drop-shadow(0 0 8px rgba(52,211,153,0.3)); }
+.glow-violet { filter: drop-shadow(0 0 8px rgba(167,139,250,0.3)); }
+.glow-amber { filter: drop-shadow(0 0 8px rgba(251,191,36,0.25)); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse { animation: pulse 3s ease-in-out infinite; }
+.pulse-delay { animation: pulse 3s ease-in-out 1s infinite; }
+.pulse-delay2 { animation: pulse 3s ease-in-out 2s infinite; }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="title-overlay">
+  <h1>Code <span>Knowledge Graphs</span><br>for AI Agents</h1>
+  <div class="subtitle">Structural intelligence for autonomous coding</div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="num" style="color:#a78bfa">21,362</div>
+    <div class="label">Symbols</div>
+  </div>
+  <div class="stat">
+    <div class="num" style="color:#34d399">737</div>
+    <div class="label">Flows</div>
+  </div>
+  <div class="stat">
+    <div class="num" style="color:#22d3ee">13</div>
+    <div class="label">Repos</div>
+  </div>
+</div>
+
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#22d3ee" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a78bfa" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#fb7185" opacity="0.7"/>
+    </marker>
+
+    <!-- Glow filters -->
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#22d3ee" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-emerald" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#34d399" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-violet" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#a78bfa" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-amber" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#fbbf24" flood-opacity="0.25"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== CONNECTION LINES (drawn first, behind nodes) ===== -->
+
+  <!-- Central hub connections -->
+  <line x1="600" y1="310" x2="420" y2="200" stroke="#22d3ee" stroke-width="1.2" opacity="0.4" marker-end="url(#arrow-cyan)"/>
+  <line x1="600" y1="310" x2="780" y2="200" stroke="#34d399" stroke-width="1.2" opacity="0.4" marker-end="url(#arrow-emerald)"/>
+  <line x1="600" y1="310" x2="420" y2="440" stroke="#a78bfa" stroke-width="1.2" opacity="0.4" marker-end="url(#arrow-violet)"/>
+  <line x1="600" y1="310" x2="780" y2="440" stroke="#fb7185" stroke-width="1.2" opacity="0.4" marker-end="url(#arrow-rose)"/>
+
+  <!-- Top-left cluster connections -->
+  <line x1="310" y1="170" x2="200" y2="130" stroke="#22d3ee" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-cyan)"/>
+  <line x1="310" y1="170" x2="200" y2="210" stroke="#22d3ee" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-cyan)"/>
+  <line x1="310" y1="170" x2="360" y2="120" stroke="#22d3ee" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Top-right cluster connections -->
+  <line x1="890" y1="170" x2="980" y2="120" stroke="#34d399" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-emerald)"/>
+  <line x1="890" y1="170" x2="990" y2="200" stroke="#34d399" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-emerald)"/>
+  <line x1="890" y1="170" x2="840" y2="120" stroke="#34d399" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-emerald)"/>
+
+  <!-- Bottom-left cluster connections -->
+  <line x1="310" y1="460" x2="200" y2="420" stroke="#a78bfa" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-violet)"/>
+  <line x1="310" y1="460" x2="200" y2="500" stroke="#a78bfa" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-violet)"/>
+  <line x1="310" y1="460" x2="360" y2="520" stroke="#a78bfa" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-violet)"/>
+
+  <!-- Bottom-right cluster connections -->
+  <line x1="890" y1="460" x2="980" y2="410" stroke="#fb7185" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-rose)"/>
+  <line x1="890" y1="460" x2="990" y2="490" stroke="#fb7185" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-rose)"/>
+  <line x1="890" y1="460" x2="850" y2="520" stroke="#fb7185" stroke-width="0.8" opacity="0.3" marker-end="url(#arrow-rose)"/>
+
+  <!-- Cross-cluster connections (process flows) -->
+  <path d="M 200 130 Q 350 90 420 170" stroke="#22d3ee" stroke-width="0.6" opacity="0.2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M 980 120 Q 850 80 780 170" stroke="#34d399" stroke-width="0.6" opacity="0.2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M 200 500 Q 350 540 420 470" stroke="#a78bfa" stroke-width="0.6" opacity="0.2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M 990 490 Q 860 540 780 470" stroke="#fb7185" stroke-width="0.6" opacity="0.2" fill="none" stroke-dasharray="4,4"/>
+
+  <!-- Long process flow across the graph -->
+  <path d="M 200 130 Q 600 60 980 120" stroke="#fbbf24" stroke-width="0.8" opacity="0.2" fill="none" stroke-dasharray="6,3"/>
+  <path d="M 200 500 Q 600 570 990 490" stroke="#fbbf24" stroke-width="0.8" opacity="0.2" fill="none" stroke-dasharray="6,3"/>
+
+  <!-- ===== CENTRAL HUB NODE ===== -->
+  <g filter="url(#glow-cyan)">
+    <rect x="555" y="275" width="90" height="70" rx="8" fill="rgba(8,51,68,0.6)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="600" y="303" text-anchor="middle" fill="#22d3ee" font-size="10" font-weight="600">KNOWLEDGE</text>
+    <text x="600" y="318" text-anchor="middle" fill="#22d3ee" font-size="10" font-weight="600">GRAPH</text>
+    <text x="600" y="335" text-anchor="middle" fill="#64748b" font-size="7">Neo4j</text>
+  </g>
+
+  <!-- ===== TOP-LEFT: QUERY (cyan) ===== -->
+  <g filter="url(#glow-cyan)">
+    <rect x="355" y="155" width="130" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="420" y="177" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="500">query()</text>
+    <text x="420" y="192" text-anchor="middle" fill="#64748b" font-size="7">Semantic Search</text>
+  </g>
+  <!-- Leaf nodes -->
+  <rect x="145" y="115" width="110" height="30" rx="4" fill="rgba(8,51,68,0.25)" stroke="#22d3ee" stroke-width="0.8" opacity="0.7"/>
+  <text x="200" y="134" text-anchor="middle" fill="#94a3b8" font-size="8">BM25 + Vectors</text>
+  <rect x="145" y="195" width="110" height="30" rx="4" fill="rgba(8,51,68,0.25)" stroke="#22d3ee" stroke-width="0.8" opacity="0.7"/>
+  <text x="200" y="214" text-anchor="middle" fill="#94a3b8" font-size="8">Process Flows</text>
+  <rect x="305" y="105" width="110" height="30" rx="4" fill="rgba(8,51,68,0.25)" stroke="#22d3ee" stroke-width="0.8" opacity="0.7"/>
+  <text x="360" y="124" text-anchor="middle" fill="#94a3b8" font-size="8">Definitions</text>
+
+  <!-- ===== TOP-RIGHT: IMPACT (emerald) ===== -->
+  <g filter="url(#glow-emerald)">
+    <rect x="715" y="155" width="130" height="50" rx="6" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="780" y="177" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="500">impact()</text>
+    <text x="780" y="192" text-anchor="middle" fill="#64748b" font-size="7">Blast Radius</text>
+  </g>
+  <!-- Leaf nodes -->
+  <rect x="925" y="105" width="110" height="30" rx="4" fill="rgba(6,78,59,0.25)" stroke="#34d399" stroke-width="0.8" opacity="0.7"/>
+  <text x="980" y="124" text-anchor="middle" fill="#94a3b8" font-size="8">d=1 WILL BREAK</text>
+  <rect x="935" y="185" width="110" height="30" rx="4" fill="rgba(6,78,59,0.25)" stroke="#34d399" stroke-width="0.8" opacity="0.7"/>
+  <text x="990" y="204" text-anchor="middle" fill="#94a3b8" font-size="8">d=2 AFFECTED</text>
+  <rect x="785" y="105" width="110" height="30" rx="4" fill="rgba(6,78,59,0.25)" stroke="#34d399" stroke-width="0.8" opacity="0.7"/>
+  <text x="840" y="124" text-anchor="middle" fill="#94a3b8" font-size="8">Risk: LOW→CRIT</text>
+
+  <!-- ===== BOTTOM-LEFT: CONTEXT (violet) ===== -->
+  <g filter="url(#glow-violet)">
+    <rect x="355" y="435" width="130" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="420" y="457" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="500">context()</text>
+    <text x="420" y="472" text-anchor="middle" fill="#64748b" font-size="7">360° Symbol View</text>
+  </g>
+  <!-- Leaf nodes -->
+  <rect x="145" y="405" width="110" height="30" rx="4" fill="rgba(76,29,149,0.25)" stroke="#a78bfa" stroke-width="0.8" opacity="0.7"/>
+  <text x="200" y="424" text-anchor="middle" fill="#94a3b8" font-size="8">Callers</text>
+  <rect x="145" y="485" width="110" height="30" rx="4" fill="rgba(76,29,149,0.25)" stroke="#a78bfa" stroke-width="0.8" opacity="0.7"/>
+  <text x="200" y="504" text-anchor="middle" fill="#94a3b8" font-size="8">Callees</text>
+  <rect x="305" y="505" width="110" height="30" rx="4" fill="rgba(76,29,149,0.25)" stroke="#a78bfa" stroke-width="0.8" opacity="0.7"/>
+  <text x="360" y="524" text-anchor="middle" fill="#94a3b8" font-size="8">Processes</text>
+
+  <!-- ===== BOTTOM-RIGHT: RENAME (rose) ===== -->
+  <g filter="url(#glow-amber)">
+    <rect x="715" y="435" width="130" height="50" rx="6" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.5"/>
+    <text x="780" y="457" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="500">rename()</text>
+    <text x="780" y="472" text-anchor="middle" fill="#64748b" font-size="7">Safe Multi-File</text>
+  </g>
+  <!-- Leaf nodes -->
+  <rect x="925" y="395" width="110" height="30" rx="4" fill="rgba(136,19,55,0.25)" stroke="#fb7185" stroke-width="0.8" opacity="0.7"/>
+  <text x="980" y="414" text-anchor="middle" fill="#94a3b8" font-size="8">Graph + Text</text>
+  <rect x="935" y="475" width="110" height="30" rx="4" fill="rgba(136,19,55,0.25)" stroke="#fb7185" stroke-width="0.8" opacity="0.7"/>
+  <text x="990" y="494" text-anchor="middle" fill="#94a3b8" font-size="8">Confidence Tags</text>
+  <rect x="795" y="505" width="110" height="30" rx="4" fill="rgba(136,19,55,0.25)" stroke="#fb7185" stroke-width="0.8" opacity="0.7"/>
+  <text x="850" y="524" text-anchor="middle" fill="#94a3b8" font-size="8">Disambiguate</text>
+
+  <!-- ===== DECORATIVE: Floating community dots ===== -->
+  <circle cx="160" cy="310" r="3" fill="#22d3ee" opacity="0.15" class="pulse"/>
+  <circle cx="1040" cy="310" r="3" fill="#34d399" opacity="0.15" class="pulse-delay"/>
+  <circle cx="600" cy="560" r="3" fill="#a78bfa" opacity="0.15" class="pulse-delay2"/>
+  <circle cx="600" cy="80" r="3" fill="#fbbf24" opacity="0.15" class="pulse"/>
+
+  <!-- Small scattered nodes suggesting a larger graph -->
+  <circle cx="100" cy="310" r="2" fill="#64748b" opacity="0.2"/>
+  <circle cx="130" cy="340" r="2" fill="#64748b" opacity="0.15"/>
+  <circle cx="1100" cy="300" r="2" fill="#64748b" opacity="0.2"/>
+  <circle cx="1080" cy="330" r="2" fill="#64748b" opacity="0.15"/>
+  <circle cx="500" cy="560" r="2" fill="#64748b" opacity="0.2"/>
+  <circle cx="700" cy="560" r="2" fill="#64748b" opacity="0.15"/>
+  <circle cx="500" cy="80" r="2" fill="#64748b" opacity="0.2"/>
+  <circle cx="700" cy="80" r="2" fill="#64748b" opacity="0.15"/>
+
+  <!-- Faint connecting lines to scattered nodes -->
+  <line x1="100" y1="310" x2="130" y2="340" stroke="#64748b" stroke-width="0.5" opacity="0.1"/>
+  <line x1="1100" y1="300" x2="1080" y2="330" stroke="#64748b" stroke-width="0.5" opacity="0.1"/>
+  <line x1="500" y1="560" x2="700" y2="560" stroke="#64748b" stroke-width="0.5" opacity="0.1"/>
+  <line x1="500" y1="80" x2="700" y2="80" stroke="#64748b" stroke-width="0.5" opacity="0.1"/>
+</svg>
+</body>
+</html>
