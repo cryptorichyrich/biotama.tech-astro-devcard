@@ -1,4 +1,5 @@
 import image from '@astrojs/image';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
 import { defineConfig } from 'astro/config';
@@ -6,9 +7,9 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://biotama.tech',
+  site: 'https://biotama.cv',
   base: '/',
-  integrations: [tailwind(), image(), compress()],
+  integrations: [tailwind(), image(), compress(), sitemap()],
   vite: {
     plugins: [visualizer()],
     resolve: {

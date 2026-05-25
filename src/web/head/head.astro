@@ -10,13 +10,22 @@ import Meta from './meta.astro';
 interface Props {
   meta: MetaConfig;
   sections: Sections;
+  ogType?: 'website' | 'article';
+  canonicalURL?: string;
+  article?: {
+    publishedTime?: string;
+    author?: string;
+    tags?: string[];
+    section?: string;
+  };
+  jsonLd?: object | object[];
 }
 
-const { meta, sections } = Astro.props;
+const { meta, sections, ogType, canonicalURL, article, jsonLd } = Astro.props;
 ---
 
 <head>
-  <Meta meta={meta} />
+  <Meta meta={meta} ogType={ogType} canonicalURL={canonicalURL} article={article} jsonLd={jsonLd} />
   <Favicons />
   <InitialHash sections={sections} />
   <InitialTheme />

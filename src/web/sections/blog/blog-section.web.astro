@@ -120,6 +120,9 @@ const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort
             img.src = post.image;
             img.alt = post.title;
             img.className = 'w-full h-32 sm:w-36 sm:h-auto sm:min-h-full object-cover flex-shrink-0';
+            img.loading = 'lazy';
+            img.width = 1200;
+            img.height = 630;
             article.appendChild(img);
           }
 

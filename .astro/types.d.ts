@@ -189,9 +189,44 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"bun-vs-nodejs-backend-engineer.md": {
+	id: "bun-vs-nodejs-backend-engineer.md";
+  slug: "bun-vs-nodejs-backend-engineer";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"cqrs-in-practice-real-constraints.md": {
+	id: "cqrs-in-practice-real-constraints.md";
+  slug: "cqrs-in-practice-real-constraints";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "hello-world.md": {
 	id: "hello-world.md";
   slug: "hello-world";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"idempotent-payment-endpoints-production.md": {
+	id: "idempotent-payment-endpoints-production.md";
+  slug: "idempotent-payment-endpoints-production";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"server-components-data-fetching.md": {
+	id: "server-components-data-fetching.md";
+  slug: "server-components-data-fetching";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"transactional-outbox-pattern-fintech.md": {
+	id: "transactional-outbox-pattern-fintech.md";
+  slug: "transactional-outbox-pattern-fintech";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

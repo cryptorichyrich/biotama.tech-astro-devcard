@@ -14,9 +14,54 @@ import FavoritesSection from '@/web/sections/favorites/favorites-section.web.ast
 import cv from '@/data';
 
 const { config, sections } = cv();
+
+const siteUrl = 'https://biotama.cv';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Bio Lumbantoruan',
+  url: siteUrl,
+  jobTitle: 'System Architect',
+  description: config.meta.description,
+  sameAs: [
+    'https://github.com/biolumbantoruan',
+    'https://linkedin.com/in/biolumbantoruan',
+  ],
+  knowsAbout: [
+    'System Architecture',
+    'Fintech Engineering',
+    'Payment Gateways',
+    'Full-Stack Development',
+    'Marketplace Platforms',
+  ],
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Bio Lumbantoruan',
+  url: siteUrl,
+  description: config.meta.description,
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+  ],
+};
+
+const jsonLd = [personSchema, webSiteSchema, breadcrumbSchema];
 ---
 
-<Layout {...config} sections={sections}>
+<Layout {...config} sections={sections} ogType="website" jsonLd={jsonLd}>
   <ThemeToggle />
   <main class="w-full max-w-5xl space-y-4 px-2 py-3 sm:space-y-6 sm:px-8 sm:py-12 lg:space-y-8 lg:py-20">
     <MainSection {...sections.main} />

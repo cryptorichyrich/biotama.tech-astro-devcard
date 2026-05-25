@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative grid lines -->
+  <line x1="200" y1="0" x2="200" y2="630" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+  <line x1="1000" y1="0" x2="1000" y2="630" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+  <!-- Accent bar -->
+  <rect x="100" y="180" width="60" height="4" rx="2" fill="url(#accent)"/>
+  <!-- CQRS diagram illustration -->
+  <!-- Command box -->
+  <rect x="150" y="250" width="200" height="80" rx="8" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+  <text x="250" y="295" font-family="system-ui, sans-serif" font-size="18" fill="#93c5fd" text-anchor="middle" font-weight="600">WRITE</text>
+  <!-- Arrow -->
+  <line x1="370" y1="290" x2="470" y2="290" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="470,285 480,290 470,295" fill="#64748b"/>
+  <!-- Event Bus box -->
+  <rect x="480" y="260" width="180" height="60" rx="6" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.5"/>
+  <text x="570" y="295" font-family="system-ui, sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">EVENT BUS</text>
+  <!-- Arrow -->
+  <line x1="670" y1="290" x2="770" y2="290" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="770,285 780,290 770,295" fill="#64748b"/>
+  <!-- Query box -->
+  <rect x="790" y="250" width="200" height="80" rx="8" fill="none" stroke="#10b981" stroke-width="2" opacity="0.6"/>
+  <text x="890" y="295" font-family="system-ui, sans-serif" font-size="18" fill="#6ee7b7" text-anchor="middle" font-weight="600">READ</text>
+  <!-- Title -->
+  <text x="100" y="210" font-family="system-ui, sans-serif" font-size="44" fill="#f1f5f9" font-weight="700">CQRS in Practice</text>
+  <!-- Subtitle -->
+  <text x="100" y="430" font-family="system-ui, sans-serif" font-size="22" fill="#94a3b8">When textbook patterns meet real constraints</text>
+  <!-- Author -->
+  <text x="100" y="560" font-family="system-ui, sans-serif" font-size="16" fill="#64748b">Bio Lumbantoruan</text>
+  <!-- Tag pills -->
+  <rect x="350" y="543" width="100" height="28" rx="14" fill="#1e3a5f" opacity="0.7"/>
+  <text x="400" y="562" font-family="system-ui, sans-serif" font-size="12" fill="#60a5fa" text-anchor="middle">architecture</text>
+  <rect x="460" y="543" width="60" height="28" rx="14" fill="#2d1f5e" opacity="0.7"/>
+  <text x="490" y="562" font-family="system-ui, sans-serif" font-size="12" fill="#a78bfa" text-anchor="middle">cqrs</text>
+  <rect x="530" y="543" width="116" height="28" rx="14" fill="#1a3a2f" opacity="0.7"/>
+  <text x="588" y="562" font-family="system-ui, sans-serif" font-size="12" fill="#6ee7b7" text-anchor="middle">design-patterns</text>
+</svg>
