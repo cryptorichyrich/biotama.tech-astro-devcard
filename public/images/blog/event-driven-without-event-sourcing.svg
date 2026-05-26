@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#48c6ef;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.05" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Event flow diagram: nodes connected by arrows -->
+  <g transform="translate(60, 320)">
+    <!-- Node 1: Service A -->
+    <rect x="0" y="-35" width="180" height="70" rx="8" fill="#1e1e3a" stroke="#6c63ff" stroke-width="2"/>
+    <text x="90" y="-5" font-family="'Courier New', monospace" font-size="16" fill="#6c63ff" text-anchor="middle" font-weight="bold">Order Service</text>
+    <text x="90" y="20" font-family="'Courier New', monospace" font-size="12" fill="#8b8baa" text-anchor="middle">PostgreSQL</text>
+
+    <!-- Arrow 1 -->
+    <line x1="180" y1="0" x2="240" y2="0" stroke="url(#accent)" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="210" y="-12" font-family="'Courier New', monospace" font-size="11" fill="#48c6ef" text-anchor="middle">event</text>
+
+    <!-- Node 2: Broker -->
+    <rect x="250" y="-35" width="160" height="70" rx="8" fill="#1e1e3a" stroke="#48c6ef" stroke-width="2"/>
+    <text x="330" y="-5" font-family="'Courier New', monospace" font-size="14" fill="#48c6ef" text-anchor="middle" font-weight="bold">RabbitMQ</text>
+    <text x="330" y="20" font-family="'Courier New', monospace" font-size="12" fill="#8b8baa" text-anchor="middle">fanout exchange</text>
+
+    <!-- Arrow 2a (up) -->
+    <line x1="410" y1="0" x2="470" y2="-100" stroke="url(#accent)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Arrow 2b (straight) -->
+    <line x1="410" y1="0" x2="470" y2="0" stroke="url(#accent)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Arrow 2c (down) -->
+    <line x1="410" y1="0" x2="470" y2="100" stroke="url(#accent)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Consumer 1 -->
+    <rect x="480" y="-135" width="170" height="55" rx="8" fill="#1e1e3a" stroke="#6c63ff" stroke-width="2" opacity="0.9"/>
+    <text x="565" y="-110" font-family="'Courier New', monospace" font-size="13" fill="#6c63ff" text-anchor="middle" font-weight="bold">Invoice Service</text>
+    <text x="565" y="-92" font-family="'Courier New', monospace" font-size="11" fill="#8b8baa" text-anchor="middle">generate PDF</text>
+
+    <!-- Consumer 2 -->
+    <rect x="480" y="-27" width="170" height="55" rx="8" fill="#1e1e3a" stroke="#48c6ef" stroke-width="2" opacity="0.9"/>
+    <text x="565" y="-2" font-family="'Courier New', monospace" font-size="13" fill="#48c6ef" text-anchor="middle" font-weight="bold">Inventory Service</text>
+    <text x="565" y="16" font-family="'Courier New', monospace" font-size="11" fill="#8b8baa" text-anchor="middle">reserve stock</text>
+
+    <!-- Consumer 3 -->
+    <rect x="480" y="80" width="170" height="55" rx="8" fill="#1e1e3a" stroke="#6c63ff" stroke-width="2" opacity="0.9"/>
+    <text x="565" y="105" font-family="'Courier New', monospace" font-size="13" fill="#6c63ff" text-anchor="middle" font-weight="bold">Notification</text>
+    <text x="565" y="123" font-family="'Courier New', monospace" font-size="11" fill="#8b8baa" text-anchor="middle">send email</text>
+
+    <!-- X over "Event Store" -->
+    <g transform="translate(700, -80)" opacity="0.3">
+      <rect x="0" y="-20" width="160" height="40" rx="6" fill="none" stroke="#ff4444" stroke-width="2" stroke-dasharray="6,3"/>
+      <text x="80" y="6" font-family="'Courier New', monospace" font-size="13" fill="#ff4444" text-anchor="middle">Event Store</text>
+      <line x1="-10" y1="-10" x2="170" y2="30" stroke="#ff4444" stroke-width="2"/>
+      <line x1="170" y1="-10" x2="-10" y2="30" stroke="#ff4444" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#48c6ef"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="42" fill="#ffffff" font-weight="bold" letter-spacing="-0.5">Event-Driven Without</text>
+  <text x="60" y="155" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="42" fill="#ffffff" font-weight="bold" letter-spacing="-0.5">Event Sourcing</text>
+
+  <!-- Accent underline -->
+  <rect x="60" y="175" width="120" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Subtitle -->
+  <text x="60" y="220" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="20" fill="#8b8baa">Decouple your services with lightweight event patterns</text>
+  <text x="60" y="250" font-family="'Segoe UI', 'Helvetica Neue', sans-serif" font-size="20" fill="#8b8baa">that don't demand a Kafka cluster.</text>
+
+  <!-- Tag pills -->
+  <g transform="translate(60, 280)">
+    <rect x="0" y="0" width="100" height="28" rx="14" fill="#1e1e3a" stroke="#6c63ff" stroke-width="1"/>
+    <text x="50" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6c63ff" text-anchor="middle">architecture</text>
+
+    <rect x="110" y="0" width="110" height="28" rx="14" fill="#1e1e3a" stroke="#48c6ef" stroke-width="1"/>
+    <text x="165" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#48c6ef" text-anchor="middle">event-driven</text>
+
+    <rect x="230" y="0" width="120" height="28" rx="14" fill="#1e1e3a" stroke="#6c63ff" stroke-width="1"/>
+    <text x="290" y="19" font-family="'Segoe UI', sans-serif" font-size="12" fill="#6c63ff" text-anchor="middle">design-patterns</text>
+  </g>
+
+  <!-- Author + date -->
+  <text x="60" y="580" font-family="'Segoe UI', sans-serif" font-size="14" fill="#5a5a7a">Bio Lumbantoruan</text>
+  <text x="1140" y="580" font-family="'Segoe UI', sans-serif" font-size="14" fill="#5a5a7a" text-anchor="end">May 2026</text>
+
+  <!-- Bottom accent line -->
+  <rect x="60" y="595" width="1080" height="1" fill="#1e1e3a"/>
+</svg>
