@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fb923c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#94a3b8" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+  </g>
+
+  <!-- Server side (left) -->
+  <rect x="80" y="80" width="480" height="400" rx="16" fill="#0f172a" fill-opacity="0.7" stroke="#334155" stroke-width="2"/>
+  <text x="100" y="120" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#38bdf8">Server</text>
+
+  <!-- Server components -->
+  <rect x="100" y="145" width="200" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="200" y="175" font-family="'JetBrains Mono','Fira Code',monospace" font-size="14" fill="#e2e8f0" text-anchor="middle">ProductCard</text>
+
+  <rect x="100" y="215" width="200" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="200" y="245" font-family="'JetBrains Mono','Fira Code',monospace" font-size="14" fill="#e2e8f0" text-anchor="middle">ReviewsList</text>
+
+  <rect x="100" y="285" width="200" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="200" y="315" font-family="'JetBrains Mono','Fira Code',monospace" font-size="14" fill="#e2e8f0" text-anchor="middle">PricingTable</text>
+
+  <!-- DB icon for server -->
+  <rect x="340" y="155" width="200" height="40" rx="20" fill="#334155"/>
+  <text x="440" y="180" font-family="'JetBrains Mono','Fira Code',monospace" font-size="13" fill="#94a3b8" text-anchor="middle">DB Query</text>
+
+  <!-- Arrow server → client -->
+  <path d="M 580 280 L 620 280" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Client side (right) -->
+  <rect x="640" y="80" width="480" height="400" rx="16" fill="#0f172a" fill-opacity="0.7" stroke="#334155" stroke-width="2"/>
+  <text x="660" y="120" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="18" font-weight="600" fill="#f472b6">Client</text>
+
+  <!-- Client components -->
+  <rect x="660" y="145" width="200" height="50" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="760" y="170" font-family="'JetBrains Mono','Fira Code',monospace" font-size="13" fill="#e2e8f0" text-anchor="middle">'use client'</text>
+  <text x="760" y="186" font-family="'JetBrains Mono','Fira Code',monospace" font-size="12" fill="#94a3b8" text-anchor="middle">AddToCart</text>
+
+  <rect x="660" y="215" width="200" height="50" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="760" y="240" font-family="'JetBrains Mono','Fira Code',monospace" font-size="13" fill="#e2e8f0" text-anchor="middle">'use client'</text>
+  <text x="760" y="256" font-family="'JetBrains Mono','Fira Code',monospace" font-size="12" fill="#94a3b8" text-anchor="middle">SearchInput</text>
+
+  <rect x="660" y="285" width="200" height="50" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="760" y="310" font-family="'JetBrains Mono','Fira Code',monospace" font-size="13" fill="#e2e8f0" text-anchor="middle">'use client'</text>
+  <text x="760" y="326" font-family="'JetBrains Mono','Fira Code',monospace" font-size="12" fill="#94a3b8" text-anchor="middle">ThemeToggle</text>
+
+  <!-- Zero JS badge -->
+  <rect x="900" y="155" width="190" height="30" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="995" y="175" font-family="'JetBrains Mono','Fira Code',monospace" font-size="12" fill="#10b981" text-anchor="middle">0 KB shipped to client</text>
+
+  <!-- Hydration badge -->
+  <rect x="900" y="220" width="190" height="30" rx="6" fill="#7c2d12" stroke="#f97316" stroke-width="1"/>
+  <text x="995" y="240" font-family="'JetBrains Mono','Fira Code',monospace" font-size="12" fill="#f97316" text-anchor="middle">Interactive</text>
+
+  <!-- RSC data flow -->
+  <text x="880" y="420" font-family="'JetBrains Mono','Fira Code',monospace" font-size="12" fill="#64748b" text-anchor="middle">serialized tree (no code)</text>
+
+  <!-- Title -->
+  <text x="600" y="565" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="28" font-weight="700" fill="#e2e8f0" text-anchor="middle" letter-spacing="-0.5">React Server Components Rethink Client-Side</text>
+</svg>
